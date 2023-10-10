@@ -20,6 +20,7 @@ Route::get('/', function () {
 Route::prefix('/customer')->group(function () {
    Route::get('/', [\App\Http\Controllers\CustomerController::class, 'index'])->name('customer.index');
    Route::get('/order', [\App\Http\Controllers\CustomerController::class, 'order'])->name('customer.order');
+   Route::get('/contact', [\App\Http\Controllers\CustomerController::class, 'contact'])->name('customer.contact');
 });
 
 Route::prefix('/admin')->group(function (){

@@ -44,10 +44,10 @@
                             <a class="nav-link text-white" href="{{ route('admin.index') }}">Quản trị</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="#">Đặt sân</a>
+                            <a class="nav-link text-white" href="{{ route('customer.order') }}">Đặt sân</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ route('customer.contact') }}">Liên hệ</a>
+                            <a class="nav-link active" href="#">Liên hệ</a>
                         </li>
                     </ul>
                     {{--                <div id="register" class="col-2">--}}
@@ -136,28 +136,10 @@
                         </div>
                     </div>
                     <div class="row mt-3" style="background-color: #05b50b">
-                        <b class="text-white" style="font-size: x-large">ĐẶT SÂN</b>
+                        <b class="text-white" style="font-size: x-large">LIÊN HỆ</b>
                     </div>
-                    <div class="row py-2" style="background-color: white">
-                        <div class="col-6">
-                            <form class="" action="" method="post">
-                                <div class="form-floating mb-3">
-                                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                                    <label for="floatingInput">Email address</label>
-                                </div>
-                                <div class="form-floating mb-3">
-                                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                                    <label for="floatingPassword">Password</label>
-                                </div>
-                                    <div class="form-floating mb-3">
-                                        <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker" inline="true">
-                                            <input placeholder="Select date" type="text" id="example" class="form-control">
-                                            <label for="example">Try me...</label>
-                                            <i class="fas fa-calendar input-prefix"></i>
-                                        </div>
-                                    </div>
-                            </form>
-                        </div>
+                    <div class="row" style="background-color: white">
+
                     </div>
                 </div>
             </div>
@@ -165,11 +147,6 @@
     </div>
 </div>
 </div>
-<script src="../../js/order.js">
-    $('.datepicker').datepicker({
-        inline: true
-    });
-</script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -47,7 +47,7 @@
                             <a class="nav-link text-white" href="{{ route('customer.order') }}">Đặt sân</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Liên hệ</a>
+                            <a class="nav-link text-white" href="{{ route('customer.contact') }}">Liên hệ</a>
                         </li>
                     </ul>
     {{--                <div id="register" class="col-2">--}}
