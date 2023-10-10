@@ -16,6 +16,11 @@ class CustomerController extends Controller
         return view('customer.index');
     }
 
+    public function order()
+    {
+        return view('customer.order');
+    }
+
     /**
      * Show the form for creating a new resource.
      */

@@ -30,7 +30,7 @@
             </a>
             <ul class="nav nav-pills mb-auto text-center">
                 <li class="nav-item">
-                    <a href="#" class="nav-link py-3 border-bottom border-black border-2">
+                    <a href="{{ route('admin.index') }}" class="nav-link py-3 border-bottom border-black border-2">
                         <img src="../../resources/Images/bar-chart.png" style="width: 80%">
                     </a>
                 </li>
@@ -59,7 +59,7 @@
                 <h1 class="text-success mt-4" style="font-family: 'Segoe UI Black'; font-size: xxx-large">QUẢN LÝ SÂN</h1>
             </div>
             <div class="border-top border-success border-4 my-4">
-
+{{--            Nhập dữ liệu vào đây đi tk loz--}}
             </div>
         </div>
     </div>
