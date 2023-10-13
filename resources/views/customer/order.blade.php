@@ -20,15 +20,12 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.css"
         rel="stylesheet"
     />
-    <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    />
+
 </head>
-<body>
+<body style="overflow: scroll;">
 <!-- Navbar -->
 <div id="intro" class="bg-image">
-    <div class="mask" style="background-color: rgba(0, 0, 0, 0.7);">
+    <div style="background-color: rgba(0, 0, 0, 0.7); background-attachment: fixed">
         <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color:#05b50b">
             <div class="container-fluid">
                 <a class="navbar-brand" href="{{route('customer.index')}}"><img src="../../resources/Images/ava-web.png" alt="" height=10% width=10%> SugmaStadium</a>
@@ -146,16 +143,21 @@
                                     <label for="floatingInput">Email address</label>
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                                    <label for="floatingPassword">Password</label>
+                                    <input type="text" class="form-control" id="floatingName" placeholder="Họ tên">
+                                    <label for="floatingName">Password</label>
                                 </div>
-                                    <div class="form-floating mb-3">
-                                        <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker" inline="true">
-                                            <input placeholder="Select date" type="text" id="example" class="form-control">
-                                            <label for="example">Try me...</label>
-                                            <i class="fas fa-calendar input-prefix"></i>
-                                        </div>
-                                    </div>
+                                <div class="form-floating mb-3">
+                                    <input placeholder="Select date" class="form-control" type="date" id="Date" placeholder="Ngày đặt">
+                                    <label for="Date">Try me...</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input placeholder="Select tim" class="form-control" type="time" id="TimeOp" placeholder="Giờ bắt đầu">
+                                    <label for="TimeOp">Try me...</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input placeholder="Select date" class="form-control" type="time" id="TimeEn" placeholder="Giờ kết thúc">
+                                    <label for="TimeEn">Try me...</label>
+                                </div>
                             </form>
                         </div>
                     </div>
@@ -165,11 +167,12 @@
     </div>
 </div>
 </div>
-<script src="../../js/order.js">
-    $('.datepicker').datepicker({
-        inline: true
+<script type="text/javascript">
+    $(function() {
+        $('#datepicker').datepicker();
     });
 </script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 </body>
 </html>
