@@ -133,7 +133,7 @@
                         <br>
                         <figure class="article center pointer">
                             <p class="text-center">
-                                <img src="../resources/Images/ava-web.png" alt="" height=50% width=50%>
+                                <img src="../resources/Images/ava-web.png" alt="" height=30% width=30%>
                             </p>
                         </figure>
                     </div>
@@ -150,10 +150,10 @@
                     <a href="#" class="text-white" style="--bs-text-opacity: .75;"><i class="fa-brands fa-twitter"></i></a>
                 </li>
                 <li class="ms-3" style="font-size: 25px">
-                    <a href="#" class="text-white" style="--bs-text-opacity: .75;"><i class="fa-brands fa-square-instagram"></i></a>
+                    <a href="#" class="text-white" style="--bs-text-opacity: .75;"><i class="fa-brands fa-facebook"></i></a>
                 </li>
                 <li class="ms-3" style="font-size: 25px">
-                    <a href="#" class="text-white" style="--bs-text-opacity: .75;"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="text-white" style="--bs-text-opacity: .75;"><i class="fa-brands fa-github"></i></a>
                 </li>
             </ul>
         </footer>
