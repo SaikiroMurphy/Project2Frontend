@@ -9,26 +9,12 @@
     <script src="https://kit.fontawesome.com/dfb2727f7d.js" crossorigin="anonymous"></script>
     <link rel="icon" type="image/x-icon" href="../../resources/Images/ava-web.png">
     <title>Trang chủ - SugmaStadium</title>
-    <style>
-        #intro {
-            background-image: url("https://m.media-amazon.com/images/I/61wbDovWcpL.jpg");
-            height: 100vh;
-            background-size: cover;
-        }
-    </style>
-    <link
-        href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.css"
-        rel="stylesheet"
-    />
-    <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    />
+    <link rel="stylesheet" href="../../resources/css/customer.css">
 </head>
 <body>
 <!-- Navbar -->
-<div id="intro" class="bg-image">
-    <div class="mask" style="background-color: rgba(0, 0, 0, 0.7);">
+<div class="intro">
+    <div style="background-color: rgba(0, 0, 0, 0.7);">
         <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color:#05b50b">
             <div class="container-fluid">
                 <a class="navbar-brand" href="{{route('customer.index')}}"><img src="../../resources/Images/ava-web.png" alt="" height=10% width=10%> SugmaStadium</a>
@@ -144,6 +130,23 @@
                 </div>
             </div>
         </div>
+{{--        End Main--}}
+
+        {{--Footer--}}
+        <footer class="d-flex flex-warp justify-content-between align-items-center py-2" style="background-color: #05b50b">
+            <div class="col-md-4 align-items-center text-white ms-3" style="--bs-text-opacity: .75;">© 2023 SugmaStadium Copyright.</div>
+            <ul class="nav col-md-4 justify-content-end list-unstyled d-flex me-3">
+                <li class="ms-3" style="font-size: 25px">
+                    <a href="#" class="text-white" style="--bs-text-opacity: .75;"><i class="fa-brands fa-twitter"></i></a>
+                </li>
+                <li class="ms-3" style="font-size: 25px">
+                    <a href="#" class="text-white" style="--bs-text-opacity: .75;"><i class="fa-brands fa-square-instagram"></i></a>
+                </li>
+                <li class="ms-3" style="font-size: 25px">
+                    <a href="#" class="text-white" style="--bs-text-opacity: .75;"><i class="fa-brands fa-facebook"></i></a>
+                </li>
+            </ul>
+        </footer>
     </div>
 </div>
 </div>
