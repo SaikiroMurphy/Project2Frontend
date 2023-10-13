@@ -26,4 +26,5 @@ Route::prefix('/customer')->group(function () {
 Route::prefix('/admin')->group(function (){
    Route::get('/',[\App\Http\Controllers\AdminController::class, 'index'])->name('admin.index');
    Route::get('/field',[\App\Http\Controllers\FieldController::class, 'index'])->name('field.index');
+   Route::get('/customer', [\App\Http\Controllers\CustomerController::class, 'customer'])->name('admin.customer.customer');
 });

@@ -26,6 +26,11 @@ class CustomerController extends Controller
         return view('customer.contact');
     }
 
+    public function customer()
+    {
+        return view('admin.customer.customer');
+    }
+
     /**
      * Show the form for creating a new resource.
      */

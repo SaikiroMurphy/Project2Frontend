@@ -5,17 +5,16 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    >
     <script src="https://kit.fontawesome.com/dfb2727f7d.js" crossorigin="anonymous"></script>
     <link rel="icon" type="image/x-icon" href="../resources/Images/ava-web.png">
     <title>Trang quản trị</title>
     <link
         href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.css"
         rel="stylesheet"
-    />
-    <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/icon?family=Material+Icons"
     />
 </head>
 <body style="background-color: whitesmoke">
@@ -36,7 +35,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link py-3 border-bottom border-black border-2" style="width: 83px">
+                    <a href="{{ route('admin.customer.customer') }}" class="nav-link py-3 border-bottom border-black border-2" style="width: 83px">
                         <img src="../resources/Images/customer.png" style="width: 24px; height: 24px">
                     </a>
                 </li>

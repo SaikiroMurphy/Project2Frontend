@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link
         rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
     />
     <script src="https://kit.fontawesome.com/dfb2727f7d.js" crossorigin="anonymous"></script>
     <link rel="icon" type="image/x-icon" href="../../resources/Images/ava-web.png">
@@ -15,10 +15,6 @@
     <link
         href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.css"
         rel="stylesheet"
-    />
-    <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/icon?family=Material+Icons"
     />
 </head>
 <body style="background-color: whitesmoke">
@@ -34,12 +30,12 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('field.index') }}" class="nav-link py-3 bg-warning border-bottom border-black border-2" style="width: 83px">
+                    <a href="#" class="nav-link py-3 bg-warning border-bottom border-black border-2" style="width: 83px">
                         <img src="../../resources/Images/football-field.png" style="width: 24px; height: 24px">
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link py-3 border-bottom border-black border-2" style="width: 83px">
+                    <a href="{{ route('admin.customer.customer') }}" class="nav-link py-3 border-bottom border-black border-2" style="width: 83px">
                         <img src="../../resources/Images/customer.png" style="width: 24px; height: 24px">
                     </a>
                 </li>
@@ -70,7 +66,7 @@
             </div>
         </div>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>
 
