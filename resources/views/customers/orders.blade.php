@@ -18,14 +18,14 @@
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color:#05b50b">
             <div class="container-fluid">
-                <a class="navbar-brand" href="{{route('customer.index')}}"><img src="../../resources/Images/ava-web.png" alt="" height=10% width=10%> SugmaStadium</a>
+                <a class="navbar-brand" href="{{route('customers.index')}}"><img src="../../resources/Images/ava-web.png" alt="" height=10% width=10%> SugmaStadium</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="offset-md-5 collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-2">
                         <li class="nav-item">
-                            <a class="nav-link text-white" aria-current="page" href="{{route('customer.index')}}">Giới thiệu</a>
+                            <a class="nav-link text-white" aria-current="page" href="{{route('customers.index')}}">Giới thiệu</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white" href="{{ route('admin.index') }}">Quản trị</a>
@@ -34,7 +34,7 @@
                             <a class="nav-link active" href="#">Đặt sân</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ route('customer.contact') }}">Liên hệ</a>
+                            <a class="nav-link text-white" href="{{ route('customers.contact') }}">Liên hệ</a>
                         </li>
                     </ul>
                     {{--                <div id="register" class="col-2">--}}
@@ -56,41 +56,50 @@
                         <ul class="list-unstyled mb-0 py-3 pt-md-1">
                             <li class="mb-1 text-white">
                                 <b>Tỉ số</b><br>
-                                <p><img src="../../resources/Images/Manchester-United.ico" alt="" height=10% width=10%>
+                                <p>
+                                    <img src="../../resources/Images/Manchester-United.ico" alt="" height=10% width=10%>
                                     MU 3-4 BM
                                     <img src="../../resources/Images/Bayern_Munchen.ico" alt="" height=10% width=10%>
                                 </p>
-                                <p><img src="../../resources/Images/Manchester-United.ico" alt="" height=10% width=10%>
+                                <p>
+                                    <img src="../../resources/Images/Manchester-United.ico" alt="" height=10% width=10%>
                                     MU 1-3 Brighton
                                     <img src="../../resources/Images/Brighton.ico" alt="" height=10% width=10%>
                                 </p>
-                                <p><img src="../../resources/Images/Arsenal.ico" alt="" height=10% width=10%>
-                                    Arsenal 3-1 MU
+                                <p>
                                     <img src="../../resources/Images/Manchester-United.ico" alt="" height=10% width=10%>
+                                    MU 1-3 Arsenal
+                                    <img src="../../resources/Images/Arsenal.ico" alt="" height=10% width=10%>
                                 </p>
-                                <p><img src="../../resources/Images/Tottenham.ico" alt="" height=10% width=10%>
-                                    Tottenham 2-0 MU
+                                <p>
                                     <img src="../../resources/Images/Manchester-United.ico" alt="" height=10% width=10%>
+                                    MU 0-2 Tottenham
+                                    <img src="../../resources/Images/Tottenham.ico" alt="" height=10% width=10%>
                                 </p>
-                                <p><img src="../../resources/Images/Manchester-United.ico" alt="" height=10% width=10%>
+                                <p>
+                                    <img src="../../resources/Images/Manchester-United.ico" alt="" height=10% width=10%>
                                     MU 2-3 Dortmund
                                     <img src="../../resources/Images/Dortmund.ico" alt="" height=10% width=10%>
                                 </p>
-                                <p><img src="../../resources/Images/Real-Madrid.ico" alt="" height=10% width=10%>
-                                    RM 2-0 MU
+                                <p>
                                     <img src="../../resources/Images/Manchester-United.ico" alt="" height=10% width=10%>
+                                    MU 0-2 RM
+                                    <img src="../../resources/Images/Real-Madrid.ico" alt="" height=10% width=10%>
                                 </p>
-                                <p><img src="../../resources/Images/Manchester-United.ico" alt="" height=10% width=10%>
+                                <p>
+                                    <img src="../../resources/Images/Manchester-United.ico" alt="" height=10% width=10%>
                                     MU 1-3 Wrexham
                                     <img src="../../resources/Images/Wrexham.ico" alt="" height=10% width=10%>
                                 </p>
-                                <p><img src="../../resources/Images/Sevilla.ico" alt="" height=10% width=10%>
-                                    Sevilla 3-0 MU
+                                <p>
                                     <img src="../../resources/Images/Manchester-United.ico" alt="" height=10% width=10%>
+                                    MU 0-3 Sevilla
+                                    <img src="../../resources/Images/Sevilla.ico" alt="" height=10% width=10%>
                                 </p>
-                                <p><img src="../../resources/Images/Liverpool.ico" alt="" height=10% width=10%>
-                                    Liverpool 7-0 MU
+                                <p>
                                     <img src="../../resources/Images/Manchester-United.ico" alt="" height=10% width=10%>
+                                    MU 0-7 Liverpool
+                                    <img src="../../resources/Images/Liverpool.ico" alt="" height=10% width=10%>
                                 </p>
                             </li>
                         </ul>
@@ -163,13 +172,13 @@
             <div class="col-md-4 align-items-center text-white ms-3" style="--bs-text-opacity: .75;">© 2023 SugmaStadium Copyright.</div>
             <ul class="nav col-md-4 justify-content-end list-unstyled d-flex me-3">
                 <li class="ms-3" style="font-size: 25px">
-                    <a href="#" class="text-white" style="--bs-text-opacity: .75;"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://twitter.com" class="text-white" style="--bs-text-opacity: .75;"><i class="fa-brands fa-twitter"></i></a>
                 </li>
                 <li class="ms-3" style="font-size: 25px">
-                    <a href="#" class="text-white" style="--bs-text-opacity: .75;"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.facebook.com" class="text-white" style="--bs-text-opacity: .75;"><i class="fa-brands fa-facebook"></i></a>
                 </li>
                 <li class="ms-3" style="font-size: 25px">
-                    <a href="#" class="text-white" style="--bs-text-opacity: .75;"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://github.com" class="text-white" style="--bs-text-opacity: .75;"><i class="fa-brands fa-github"></i></a>
                 </li>
             </ul>
         </footer>
@@ -177,11 +186,6 @@
 
 </div>
 
-<script type="text/javascript">
-    $(function() {
-        $('#datepicker').datepicker();
-    });
-</script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 </body>

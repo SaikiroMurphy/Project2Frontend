@@ -20,7 +20,7 @@
 <body style="background-color: whitesmoke">
 <div class="d-flex flex-nowrap">
     <div class="d-flex flex-column flex-shrink-0 bg-success bg-gradient border-end border-black border-1 ps-2">
-        <a href="{{ route('customer.index') }}" class="link-dark" style="width: 83px">
+        <a href="{{ route('customers.index') }}" class="link-dark" style="width: 83px">
             <img src="../../resources/Images/ava-web.png" style="width: 100%">
         </a>
         <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
@@ -30,7 +30,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{ route('field.index') }}" class="nav-link py-3 border-bottom border-black border-2" style="width: 83px">
+                <a href="{{ route('fields.index') }}" class="nav-link py-3 border-bottom border-black border-2" style="width: 83px">
                     <img src="../../resources/Images/football-field.png" style="width: 24px; height: 24px">
                 </a>
             </li>
@@ -57,7 +57,7 @@
         </div>
     </div>
     <div class="col col-11 ps-2">
-        <p><a href="{{ route('customer.index') }}" class="link-primary">Trang chủ</a> / <a href="#" class="link-secondary" aria-disabled="true">Quản lý người dùng</a></p>
+        <p><a href="{{ route('customers.index') }}" class="link-primary">Trang chủ</a> / <a href="#" class="link-secondary" aria-disabled="true">Quản lý người dùng</a></p>
         <div>
             <h1 class="text-success mt-4" style="font-family: 'Segoe UI Black'; font-size: xxx-large">QUẢN LÝ NGƯỜI DÙNG</h1>
         </div>

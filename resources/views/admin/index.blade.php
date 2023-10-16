@@ -20,7 +20,7 @@
 <body style="background-color: whitesmoke">
 <div class="d-flex flex-nowrap">
         <div class="d-flex flex-column flex-shrink-0 bg-success bg-gradient border-end border-black border-1 ps-2">
-            <a href="{{ route('customer.index') }}" class="link-dark" style="width: 83px">
+            <a href="{{ route('customers.index') }}" class="link-dark" style="width: 83px">
                 <img src="../resources/Images/ava-web.png" style="width: 100%">
             </a>
             <ul class=" nav nav-pills nav-flush flex-column mb-auto text-center">
@@ -30,12 +30,12 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('field.index') }}" class="nav-link py-3 border-bottom border-black border-2" style="width: 83px">
+                    <a href="{{ route('fields.index') }}" class="nav-link py-3 border-bottom border-black border-2" style="width: 83px">
                         <img src="../resources/Images/football-field.png" style="width: 24px; height: 24px">
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('admin.customer.customer') }}" class="nav-link py-3 border-bottom border-black border-2" style="width: 83px">
+                    <a href="{{ route('admin.customers.customers') }}" class="nav-link py-3 border-bottom border-black border-2" style="width: 83px">
                         <img src="../resources/Images/customer.png" style="width: 24px; height: 24px">
                     </a>
                 </li>
@@ -57,7 +57,7 @@
             </div>
         </div>
         <div class="col col-11 ps-2">
-                <p><a href="{{ route('customer.index') }}" class="link-primary">Trang chủ</a> / <a href="#" class="link-secondary" aria-disabled="true">Thống kê</a></p>
+                <p><a href="{{ route('customers.index') }}" class="link-primary">Trang chủ</a> / <a href="#" class="btn-link disabled" aria-disabled="true">Thống kê</a></p>
             <div>
                 <h1 class="text-success mt-4" style="font-family: 'Segoe UI Black'; font-size: xxx-large">THỐNG KÊ</h1>
             </div>
@@ -67,21 +67,21 @@
                         <div class="fw-bold">Sân 7</div>
                         Số lượng sân 7
                     </div>
-                    <span class="fs-1">14</span>
+                    <span class="fs-1">{{ $count7 }}</span>
                 </li>
                 <li class="list-group-item d-flex justify-content-between align-items-start mt-4">
                     <div class="ms-2 me-auto">
                         <div class="fw-bold">Sân 11</div>
                         Số lượng sân 11
                     </div>
-                    <span class="fs-1">14</span>
+                    <span class="fs-1">{{ $count11 }}</span>
                 </li>
                 <li class="list-group-item d-flex justify-content-between align-items-start mt-4">
                     <div class="ms-2 me-auto">
                         <div class="fw-bold">Người dùng</div>
                         Số lượng người dùng đã đăng ký
                     </div>
-                    <span class="fs-1">14</span>
+                    <span class="fs-1">{{ $custCount }}</span>
                 </li>
                 <li class="list-group-item d-flex justify-content-between align-items-start mt-4">
                     <div class="ms-2 me-auto">

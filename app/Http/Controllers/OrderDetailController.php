@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Time;
-use App\Http\Requests\StoreTimeRequest;
-use App\Http\Requests\UpdateTimeRequest;
+use App\Models\OrderDetail;
+use App\Http\Requests\StoreOrderDetailRequest;
+use App\Http\Requests\UpdateOrderDetailRequest;
 
-class TimeController extends Controller
+class OrderDetailController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,10 +31,10 @@ class TimeController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreTimeRequest  $request
+     * @param  \App\Http\Requests\StoreOrderDetailRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreTimeRequest $request)
+    public function store(StoreOrderDetailRequest $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class TimeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Time  $time
+     * @param  \App\Models\OrderDetail  $orderDetail
      * @return \Illuminate\Http\Response
      */
-    public function show(Time $time)
+    public function show(OrderDetail $orderDetail)
     {
         //
     }
@@ -53,10 +53,10 @@ class TimeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Time  $time
+     * @param  \App\Models\OrderDetail  $orderDetail
      * @return \Illuminate\Http\Response
      */
-    public function edit(Time $time)
+    public function edit(OrderDetail $orderDetail)
     {
         //
     }
@@ -64,11 +64,11 @@ class TimeController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateTimeRequest  $request
-     * @param  \App\Models\Time  $time
+     * @param  \App\Http\Requests\UpdateOrderDetailRequest  $request
+     * @param  \App\Models\OrderDetail  $orderDetail
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateTimeRequest $request, Time $time)
+    public function update(UpdateOrderDetailRequest $request, OrderDetail $orderDetail)
     {
         //
     }
@@ -76,10 +76,10 @@ class TimeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Time  $time
+     * @param  \App\Models\OrderDetail  $orderDetail
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Time $time)
+    public function destroy(OrderDetail $orderDetail)
     {
         //
     }

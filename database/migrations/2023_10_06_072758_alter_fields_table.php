@@ -13,10 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('field_types', function (Blueprint $table) {
-            $table->id();
-            $table->string('type');
-            $table->string('price');
+        Schema::table('fields', function (Blueprint $table) {
+            $table->string('image')->nullable()->change();
         });
     }
 
@@ -27,6 +25,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('field_types');
+        //
     }
 };

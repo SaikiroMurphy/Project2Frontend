@@ -8,21 +8,26 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
+     *
+     * @return void
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('fields', function (Blueprint $table) {
             $table->id();
-            $table->string('fields');
-            $table->string('description');
-            $table->foreignId('type_id')->constrained('field_types');
+            $table->string("name");
+            $table->string("image");
+            $table->string("description");
+            $table->foreignId("type_id")->constrained("field_types");
         });
     }
 
     /**
      * Reverse the migrations.
+     *
+     * @return void
      */
-    public function down(): void
+    public function down()
     {
         Schema::dropIfExists('fields');
     }

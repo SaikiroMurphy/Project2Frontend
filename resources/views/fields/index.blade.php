@@ -11,7 +11,7 @@
     />
     <script src="https://kit.fontawesome.com/dfb2727f7d.js" crossorigin="anonymous"></script>
     <link rel="icon" type="image/x-icon" href="../../resources/Images/ava-web.png">
-    <title>Trang quản trị</title>
+    <title>Trang quản trị - Quản lý sân</title>
     <link
         href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.css"
         rel="stylesheet"
@@ -20,7 +20,7 @@
 <body style="background-color: whitesmoke">
 <div class="d-flex flex-nowrap">
         <div class="d-flex flex-column flex-shrink-0 bg-success bg-gradient border-end border-black border-1 ps-2">
-            <a href="{{ route('customer.index') }}" class="link-dark" style="width: 83px">
+            <a href="{{ route('customers.index') }}" class="link-dark" style="width: 83px">
                 <img src="../../resources/Images/ava-web.png" style="width: 100%">
             </a>
             <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
@@ -35,7 +35,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('admin.customer.customer') }}" class="nav-link py-3 border-bottom border-black border-2" style="width: 83px">
+                    <a href="{{ route('admin.customers.customers') }}" class="nav-link py-3 border-bottom border-black border-2" style="width: 83px">
                         <img src="../../resources/Images/customer.png" style="width: 24px; height: 24px">
                     </a>
                 </li>
@@ -56,13 +56,48 @@
                 </ul>
             </div>
         </div>
-        <div class="col col-11 ps-2">
-                <p><a href="{{ route('customer.index') }}" class="link-primary">Trang chủ</a> / <a href="#" class="link-secondary" aria-disabled="true">Quản lý sân</a></p>
+        <div class="col col-11 ps-3">
+                <p><a href="{{ route('customers.index') }}" class="link-primary">Trang chủ</a> / <a href="#" class="link-secondary" aria-disabled="true">Quản lý sân</a></p>
             <div>
                 <h1 class="text-success mt-4" style="font-family: 'Segoe UI Black'; font-size: xxx-large">QUẢN LÝ SÂN</h1>
             </div>
             <div class="border-top border-success border-4 my-4">
 {{--            Nhập dữ liệu vào đây đi tk loz--}}
+                <table class="table table-success table-striped" border="1px" cellpadding="0" cellspacing="0" width="100%">
+                    <thead>
+                    <tr>
+                        <a class="btn btn-success my-2" href="#"><i class="fa-regular fa-square-plus fa-lg fa-bounce"></i></a>
+                        <th scope="col">ID sân</th>
+                        <th scope="col">Tên sân</th>
+                        <th scope="col">Ảnh sân</th>
+                        <th scope="col">Mô tả sân</th>
+                        <th scope="col">Loại sân</th>
+                        <th scope="col">Tuỳ chọn</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach($fields as $item)
+                        <tr>
+                            <th scope="row">{{ $item -> id }}</th>
+                            <td>{{ $item -> name }}</td>
+                            <td>
+                                <img src="{{ asset(\Illuminate\Support\Facades\Storage::url('admin/img/').$item->image) }}" width="100px" height="100px">
+                            </td>
+                            <td>{{ $item->description }}</td>
+                            <td>{{ $item->types->type }}</td>
+                            <td>
+                                <a class="btn btn-warning my-1" href="#"><i class="fa-regular fa-pen-to-square"></i></a>
+                                <form method="post" action="#">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn btn-danger my-1"><i class="fa-regular fa-trash-can"></i></button>
+                                </form>
+                            </td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+                {{ $fields->links() }}
             </div>
         </div>
 </div>
