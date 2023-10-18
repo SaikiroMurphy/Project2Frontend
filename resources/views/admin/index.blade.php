@@ -56,8 +56,13 @@
                 </ul>
             </div>
         </div>
-        <div class="col col-11 ps-2">
-                <p><a href="{{ route('customers.index') }}" class="link-primary">Trang chủ</a> / <a href="#" class="btn-link disabled" aria-disabled="true">Thống kê</a></p>
+        <div class="col col-11 ps-3">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ route('customers.index') }}">Trang chủ</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Thống kê</li>
+                </ol>
+            </nav>
             <div>
                 <h1 class="text-success mt-4" style="font-family: 'Segoe UI Black'; font-size: xxx-large">THỐNG KÊ</h1>
             </div>

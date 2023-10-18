@@ -51,13 +51,13 @@ class FieldController extends Controller
     // Chức năng thêm
     public function store(StoreFieldRequest $request)
     {
-        $img_name = $request->file('image')->getClientOriginalName();
-        if(!Storage::exists('/public/admin/img'.$img_name)) {
-            Storage::putFileAs('public/admin/img', $request->file('image'), $img_name);
-        }
+//        $img_name = $request->file('image')->getClientOriginalName();
+//        if(!Storage::exists('/public/admin/img'.$img_name)) {
+//            Storage::putFileAs('public/admin/img', $request->file('image'), $img_name);
+//        }
         $array = [];
         $array = Arr::add($array, 'name', $request->name);
-        $array = Arr::add($array, 'image', $img_name);
+        $array = Arr::add($array, 'image', $request->image);
         $array = Arr::add($array, 'description', $request->description);
         $array = Arr::add($array, 'type_id', $request->type_id);
         Field::create($array);

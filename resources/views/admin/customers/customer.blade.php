@@ -56,7 +56,7 @@
             </ul>
         </div>
     </div>
-    <div class="col col-11 ps-2">
+    <div class="col col-11 ps-3">
         <p><a href="{{ route('customers.index') }}" class="link-primary">Trang chủ</a> / <a href="#" class="link-secondary" aria-disabled="true">Quản lý người dùng</a></p>
         <div>
             <h1 class="text-success mt-4" style="font-family: 'Segoe UI Black'; font-size: xxx-large">QUẢN LÝ NGƯỜI DÙNG</h1>

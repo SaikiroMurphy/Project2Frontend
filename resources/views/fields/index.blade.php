@@ -9,99 +9,142 @@
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
     />
-    <script src="https://kit.fontawesome.com/dfb2727f7d.js" crossorigin="anonymous"></script>
-    <link rel="icon" type="image/x-icon" href="../../resources/Images/ava-web.png">
-    <title>Trang quản trị - Quản lý sân</title>
     <link
         href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.css"
         rel="stylesheet"
     />
+    <script src="https://kit.fontawesome.com/dfb2727f7d.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/x-icon" href="../../resources/Images/ava-web.png">
+    <title>Trang quản trị - Quản lý sân</title>
+
 </head>
 <body style="background-color: whitesmoke">
 <div class="d-flex flex-nowrap">
-        <div class="d-flex flex-column flex-shrink-0 bg-success bg-gradient border-end border-black border-1 ps-2">
-            <a href="{{ route('customers.index') }}" class="link-dark" style="width: 83px">
-                <img src="../../resources/Images/ava-web.png" style="width: 100%">
+
+    {{--Sidebar--}}
+    <div class="d-flex flex-column flex-shrink-0 bg-success bg-gradient border-end border-black border-1 ps-2">
+        <a href="{{ route('customers.index') }}" class="link-dark" style="width: 83px">
+            <img src="../../resources/Images/ava-web.png" style="width: 100%">
+        </a>
+        <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
+            <li class="nav-item">
+                <a href="{{ route('admin.index') }}" class="nav-link py-3 border-bottom border-black border-2" style="width: 83px">
+                    <img src="../../resources/Images/bar-chart.png" style="width: 24px; height: 24px">
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link py-3 bg-warning border-bottom border-black border-2" style="width: 83px">
+                    <img src="../../resources/Images/football-field.png" style="width: 24px; height: 24px">
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{{ route('admin.customers.customers') }}" class="nav-link py-3 border-bottom border-black border-2" style="width: 83px">
+                    <img src="../../resources/Images/customer.png" style="width: 24px; height: 24px">
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link py-3 border-bottom border-black border-2" style="width: 83px">
+                    <img src="../../resources/Images/clipboard.png" style="width: 24px; height: 24px">
+                </a>
+            </li>
+        </ul>
+        <div class="dropdown border-top">
+            <a href="#" class="d-flex align-items-center justify-content-center p-3 link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="../../resources/Images/ava-web.png" alt="Admin" width="42" height="42" class="rounded-circle">
             </a>
-            <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
-                <li class="nav-item">
-                    <a href="{{ route('admin.index') }}" class="nav-link py-3 border-bottom border-black border-2" style="width: 83px">
-                        <img src="../../resources/Images/bar-chart.png" style="width: 24px; height: 24px">
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link py-3 bg-warning border-bottom border-black border-2" style="width: 83px">
-                        <img src="../../resources/Images/football-field.png" style="width: 24px; height: 24px">
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ route('admin.customers.customers') }}" class="nav-link py-3 border-bottom border-black border-2" style="width: 83px">
-                        <img src="../../resources/Images/customer.png" style="width: 24px; height: 24px">
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link py-3 border-bottom border-black border-2" style="width: 83px">
-                        <img src="../../resources/Images/clipboard.png" style="width: 24px; height: 24px">
-                    </a>
+            <ul class="dropdown-menu text-small shadow">
+                <li>
+                    <a class="dropdown-item" href="#" >Đăng xuất</a>
                 </li>
             </ul>
-            <div class="dropdown border-top">
-                <a href="#" class="d-flex align-items-center justify-content-center p-3 link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="../../resources/Images/ava-web.png" alt="Admin" width="42" height="42" class="rounded-circle">
-                </a>
-                <ul class="dropdown-menu text-small shadow">
-                    <li>
-                        <a class="dropdown-item" href="#" >Đăng xuất</a>
-                    </li>
-                </ul>
-            </div>
         </div>
-        <div class="col col-11 ps-3">
-                <p><a href="{{ route('customers.index') }}" class="link-primary">Trang chủ</a> / <a href="#" class="link-secondary" aria-disabled="true">Quản lý sân</a></p>
-            <div>
-                <h1 class="text-success mt-4" style="font-family: 'Segoe UI Black'; font-size: xxx-large">QUẢN LÝ SÂN</h1>
-            </div>
-            <div class="border-top border-success border-4 my-4">
-{{--            Nhập dữ liệu vào đây đi tk loz--}}
-                <table class="table table-success table-striped" border="1px" cellpadding="0" cellspacing="0" width="100%">
-                    <thead>
+    </div>
+
+    {{--Main--}}
+    <div class="col col-11 ps-3">
+
+{{--        Breadcrumb--}}
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ route('customers.index') }}">Trang chủ</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Quản lý sân</li>
+            </ol>
+        </nav>
+
+{{--        Title--}}
+        <div>
+            <h1 class="text-success mt-4" style="font-family: 'Segoe UI Black'; font-size: xxx-large">QUẢN LÝ SÂN</h1>
+        </div>
+        <div class="border-top border-success border-4 my-4">
+
+{{--            Table--}}
+            <table class="table table-success table-striped" border="1px" cellpadding="0" cellspacing="0" width="100%">
+                <thead>
+                <tr>
+                    <a class="btn btn-success btn-lg my-2" href="{{ route('fields.create') }}"><i class="fa-regular fa-square-plus fa-lg fa-bounce"></i></a>
+                    <th scope="col">ID sân</th>
+                    <th scope="col">Tên sân</th>
+                    <th scope="col">Ảnh sân</th>
+                    <th scope="col">Mô tả sân</th>
+                    <th scope="col">Loại sân</th>
+                    <th scope="col">Tuỳ chọn</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                @foreach($fields as $item)
                     <tr>
-                        <a class="btn btn-success my-2" href="#"><i class="fa-regular fa-square-plus fa-lg fa-bounce"></i></a>
-                        <th scope="col">ID sân</th>
-                        <th scope="col">Tên sân</th>
-                        <th scope="col">Ảnh sân</th>
-                        <th scope="col">Mô tả sân</th>
-                        <th scope="col">Loại sân</th>
-                        <th scope="col">Tuỳ chọn</th>
+                        <th scope="row">{{ $item -> id }}</th>
+                        <td>{{ $item -> name }}</td>
+                        <td>
+                            <img src="{{ asset(\Illuminate\Support\Facades\Storage::url('admin/img/').$item->image) }}" width="100px" height="100px">
+                        </td>
+                        <td>{{ $item->description }}</td>
+                        <td>{{ $item->types->type }}</td>
+
+                        <td>
+                            <a class="btn btn-warning btn-lg my-1" href="#"><i class="fa-regular fa-pen-to-square fa-shake"></i></a>
+                            <button type="button" class="btn btn-danger btn-lg my-1" data-bs-toggle="modal" data-bs-target="#myModal"><i class="fa-solid fa-dumpster fa-shake"></i></button>
+
+                            {{--Modal--}}
+                            <div class="modal fade" id="myModal">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <!-- Modal Header -->
+                                        <div class="modal-header">
+                                            <h4 class="modal-title">Xác nhận xóa</h4>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                        </div>
+
+                                        <!-- Modal body -->
+                                        <div class="modal-body">
+                                            Bạn có chắc chắn muốn xóa mục này?
+                                        </div>
+
+                                        <!-- Modal footer -->
+                                        <div class="modal-footer">
+                                            <div class="modal-footer">
+                                                <button class="btn btn-light" data-bs-dismiss="modal">Không</button>
+                                                <form method="post" action="{{ route('fields.destroy', $item->id) }}">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button class="btn btn-danger">Có</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
                     </tr>
-                    </thead>
-                    <tbody>
-                    @foreach($fields as $item)
-                        <tr>
-                            <th scope="row">{{ $item -> id }}</th>
-                            <td>{{ $item -> name }}</td>
-                            <td>
-                                <img src="{{ asset(\Illuminate\Support\Facades\Storage::url('admin/img/').$item->image) }}" width="100px" height="100px">
-                            </td>
-                            <td>{{ $item->description }}</td>
-                            <td>{{ $item->types->type }}</td>
-                            <td>
-                                <a class="btn btn-warning my-1" href="#"><i class="fa-regular fa-pen-to-square"></i></a>
-                                <form method="post" action="#">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button class="btn btn-danger my-1"><i class="fa-regular fa-trash-can"></i></button>
-                                </form>
-                            </td>
-                        </tr>
-                    @endforeach
-                    </tbody>
-                </table>
-                {{ $fields->links() }}
-            </div>
+                @endforeach
+                </tbody>
+            </table>
+            {{ $fields->links() }}
         </div>
+    </div>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
 

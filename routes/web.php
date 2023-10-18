@@ -26,5 +26,8 @@ Route::prefix('/customers')->group(function () {
 Route::prefix('/admin')->group(function (){
    Route::get('/',[\App\Http\Controllers\AdminController::class, 'index'])->name('admin.index');
    Route::get('/fields',[\App\Http\Controllers\FieldController::class, 'index'])->name('fields.index');
+   Route::get('/fields/create', [\App\Http\Controllers\FieldController::class, 'create'])->name('fields.create');
+   Route::post('/fields/store', [\App\Http\Controllers\FieldController::class, 'store'])->name('fields.store');
    Route::get('/customers', [\App\Http\Controllers\CustomerController::class, 'customers'])->name('admin.customers.customers');
+    Route::delete('/fields/{id}', [\App\Http\Controllers\FieldController::class, 'destroy'])->name('fields.destroy');
 });
