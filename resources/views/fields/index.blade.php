@@ -38,7 +38,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{ route('admin.customers.customers') }}" class="nav-link py-3 border-bottom border-black border-2" style="width: 83px">
+                <a href="{{ route('admin.customers') }}" class="nav-link py-3 border-bottom border-black border-2" style="width: 83px">
                     <img src="../../resources/Images/customer.png" style="width: 24px; height: 24px">
                 </a>
             </li>
@@ -48,7 +48,7 @@
                 </a>
             </li>
         </ul>
-        <div class="dropdown border-top">
+        <div class="dropup border-top">
             <a href="#" class="d-flex align-items-center justify-content-center p-3 link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                 <img src="../../resources/Images/ava-web.png" alt="Admin" width="42" height="42" class="rounded-circle">
             </a>
@@ -103,11 +103,11 @@
                         <td>{{ $item->types->type }}</td>
 
                         <td>
-                            <a class="btn btn-warning btn-lg my-1" href="#"><i class="fa-regular fa-pen-to-square fa-shake"></i></a>
-                            <button type="button" class="btn btn-danger btn-lg my-1" data-bs-toggle="modal" data-bs-target="#myModal"><i class="fa-solid fa-dumpster fa-shake"></i></button>
+                            <a class="btn btn-warning btn-lg my-1" href="{{ route('fields.edit', $item->id) }}"><i class="fa-regular fa-pen-to-square fa-shake"></i></a>
+                            <button type="button" class="btn btn-danger btn-lg my-1" data-bs-toggle="modal" data-bs-target="#myModal{{ $item->id }}"><i class="fa-solid fa-dumpster fa-shake"></i></button>
 
                             {{--Modal--}}
-                            <div class="modal fade" id="myModal">
+                            <div class="modal fade" id="myModal{{ $item->id }}">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <!-- Modal Header -->

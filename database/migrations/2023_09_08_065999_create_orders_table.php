@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignId('time_id')->constrained('times');
             $table->foreignId('admin_id')->constrained('admins');
             $table->foreignId('customer_id')->constrained('customers');
+            $table->foreignId('status_id')->constrained('statuses');
         });
     }
 

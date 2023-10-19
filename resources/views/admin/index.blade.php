@@ -35,17 +35,17 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('admin.customers.customers') }}" class="nav-link py-3 border-bottom border-black border-2" style="width: 83px">
+                    <a href="{{ route('admin.customers') }}" class="nav-link py-3 border-bottom border-black border-2" style="width: 83px">
                         <img src="../resources/Images/customer.png" style="width: 24px; height: 24px">
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link py-3 border-bottom border-black border-2" style="width: 83px">
+                    <a href="{{ route('admin.orders') }}" class="nav-link py-3 border-bottom border-black border-2" style="width: 83px">
                         <img src="../resources/Images/clipboard.png" style="width: 24px; height: 24px">
                     </a>
                 </li>
             </ul>
-            <div class="dropdown border-top">
+            <div class="dropup border-top">
                 <a href="#" class="d-flex align-items-center justify-content-center p-3 link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                     <img src="../resources/Images/ava-web.png" alt="Admin" width="42" height="42" class="rounded-circle">
                 </a>
@@ -67,6 +67,13 @@
                 <h1 class="text-success mt-4" style="font-family: 'Segoe UI Black'; font-size: xxx-large">THỐNG KÊ</h1>
             </div>
             <ul class="list-group list-group-flush border-top border-success border-4 my-4">
+                <li class="list-group-item d-flex justify-content-between align-items-start mt-4">
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold">Sân 5</div>
+                        Số lượng sân 5
+                    </div>
+                    <span class="fs-1">{{ $count5 }}</span>
+                </li>
                 <li class="list-group-item d-flex justify-content-between align-items-start mt-4">
                     <div class="ms-2 me-auto">
                         <div class="fw-bold">Sân 7</div>
@@ -93,14 +100,14 @@
                         <div class="fw-bold">Nhân viên</div>
                         Số lượng nhân viên
                     </div>
-                    <span class="fs-1">14</span>
+                    <span class="fs-1">{{ $adCount }}</span>
                 </li>
                 <li class="list-group-item d-flex justify-content-between align-items-start mt-4">
                     <div class="ms-2 me-auto">
                         <div class="fw-bold">Đặt sân</div>
                         Số lượng đơn đặt sân
                     </div>
-                    <span class="fs-1">14</span>
+                    <span class="fs-1">{{ $ordCount }}</span>
                 </li>
             </ul>
         </div>

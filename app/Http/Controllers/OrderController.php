@@ -16,6 +16,14 @@ class OrderController extends Controller
     public function index()
     {
         //
+        $orders = Order::with('customers')
+            ->with('fields')
+            ->with('customers')
+            ->with('admins')
+            ->with('times')
+            ->with('statuses')
+            ->simplePaginate(5);
+        return view('admin.orders', ['orders'=> $orders]);
     }
 
     /**

@@ -19,8 +19,7 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        $customers = Customer::paginate(5);
-        return view('customers.index', ['customers' => $customers]);
+        return view('customers.index');
     }
 
     public function order() {
@@ -31,9 +30,7 @@ class CustomerController extends Controller
         return view('customers.contact');
     }
 
-    public function customers() {
-        return view('admin.customers.customer');
-    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -119,23 +116,23 @@ class CustomerController extends Controller
         $del_cust->destroyCustomer();
         return Redirect::route('customers.index');
     }
-
-    public function login() {
-        return view('customers.login');
-    }
-    public function loginProcess(\Illuminate\Http\Request $request) {
-        $account = $request->only('email', 'password');
-        // Xác thực đăng nhập
-        if (Auth::guard('customers')->attempt($account)) {
-            // Cho login
-            // Lấy thông tin customers
-            $customers = Auth::guard('customers')->user();
-            Auth::login($customers);
-            session(['customers' => $customers]);
-            return Redirect::route('customers.index');
-        } else {
-            // Quay về trang login
-            return Redirect::back();
-        }
-    }
+//
+//    public function login() {
+//        return view('customers.login');
+//    }
+//    public function loginProcess(\Illuminate\Http\Request $request) {
+//        $account = $request->only('email', 'password');
+//        // Xác thực đăng nhập
+//        if (Auth::guard('customers')->attempt($account)) {
+//            // Cho login
+//            // Lấy thông tin customers
+//            $customers = Auth::guard('customers')->user();
+//            Auth::login($customers);
+//            session(['customers' => $customers]);
+//            return Redirect::route('customers.index');
+//        } else {
+//            // Quay về trang login
+//            return Redirect::back();
+//        }
+//    }
 }

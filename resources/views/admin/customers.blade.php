@@ -45,7 +45,7 @@
                 </a>
             </li>
         </ul>
-        <div class="dropdown border-top">
+        <div class="dropup border-top">
             <a href="#" class="d-flex align-items-center justify-content-center p-3 link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                 <img src="../../resources/Images/ava-web.png" alt="Admin" width="42" height="42" class="rounded-circle">
             </a>
@@ -62,7 +62,66 @@
             <h1 class="text-success mt-4" style="font-family: 'Segoe UI Black'; font-size: xxx-large">QUẢN LÝ NGƯỜI DÙNG</h1>
         </div>
         <div class="border-top border-success border-4 my-4">
-            {{--            Nhập dữ liệu vào đây đi tk loz--}}
+            {{--            Table--}}
+            <table class="table table-success table-striped mt-4" border="1px" cellpadding="0" cellspacing="0" width="100%">
+                <thead>
+                <tr>
+                    <th scope="col">ID người dùng</th>
+                    <th scope="col">Họ và tên</th>
+                    <th scope="col">Địa chỉ</th>
+                    <th scope="col">Số điện thoại</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Mật khẩu</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach($customers as $item)
+                    <tr>
+                        <th scope="row">{{ $item -> id }}</th>
+                        <td>{{ $item -> name }}</td>
+                        <td>{{ $item->address }}</td>
+                        <td>{{ $item->phonenumber }}</td>
+                        <td>{{ $item->email }}</td>
+                        <td>{{ $item->password }}</td>
+{{--                        <td>--}}
+{{--                            <button type="button" class="btn btn-danger btn-lg my-1" data-bs-toggle="modal" data-bs-target="#myModal{{ $item->id }}"><i class="fa-solid fa-dumpster fa-shake"></i></button>--}}
+
+{{--                            --}}{{--Modal--}}
+{{--                            <div class="modal fade" id="myModal{{ $item->id }}">--}}
+{{--                                <div class="modal-dialog">--}}
+{{--                                    <div class="modal-content">--}}
+{{--                                        <!-- Modal Header -->--}}
+{{--                                        <div class="modal-header">--}}
+{{--                                            <h4 class="modal-title">Xác nhận xóa</h4>--}}
+{{--                                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>--}}
+{{--                                        </div>--}}
+
+{{--                                        <!-- Modal body -->--}}
+{{--                                        <div class="modal-body">--}}
+{{--                                            Bạn có chắc chắn muốn xóa mục này?--}}
+{{--                                        </div>--}}
+
+{{--                                        <!-- Modal footer -->--}}
+{{--                                        <div class="modal-footer">--}}
+{{--                                            <div class="modal-footer">--}}
+{{--                                                <button class="btn btn-light" data-bs-dismiss="modal">Không</button>--}}
+{{--                                                <form method="post" action="{{ route('customers.destroy', $item->id) }}">--}}
+{{--                                                    @csrf--}}
+{{--                                                    @method('DELETE')--}}
+{{--                                                    <button class="btn">Xoá</button>--}}
+{{--                                                </form>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </td>--}}
+                    </tr>
+                @endforeach
+                </tbody>
+
+            </table>
+            {{ $customers->links() }}
         </div>
     </div>
 </div>

@@ -7,6 +7,7 @@ use App\Http\Requests\StoreAdminRequest;
 use App\Http\Requests\UpdateAdminRequest;
 use App\Models\Customer;
 use App\Models\Field;
+use App\Models\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -21,13 +22,26 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $count7 = Field::where('type_id', '1')->count();
-        $count11 = Field::where('type_id', '2')->count();
+        $count5 = Field::where('type_id', '1')->count();
+        $count7 = Field::where('type_id', '2')->count();
+        $count11 = Field::where('type_id', '3')->count();
+        $adCount = Admin::count();
         $custCount = Customer::count();
+        $ordCount = Order::count();
         return view('admin.index', [
             'count7' => $count7,
             'count11' => $count11,
-            'custCount' => $custCount
+            'count5' => $count5,
+            'custCount' => $custCount,
+            'adCount' => $adCount,
+            'ordCount' => $ordCount
+        ]);
+    }
+
+    public function customers() {
+        $customers = Customer::paginate(10);
+        return view('admin.customers', [
+            'customers' => $customers
         ]);
     }
 
