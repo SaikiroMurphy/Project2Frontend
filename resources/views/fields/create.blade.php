@@ -23,25 +23,40 @@
         <a href="{{ route('customers.index') }}" class="link-dark" style="width: 83px">
             <img src="../../../resources/Images/ava-web.png" style="width: 100%">
         </a>
-        <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
+        <ul class=" nav nav-pills nav-flush flex-column mb-auto text-center">
             <li class="nav-item">
                 <a href="{{ route('admin.index') }}" class="nav-link py-3 border-bottom border-black border-2" style="width: 83px">
-                    <img src="../../../resources/Images/bar-chart.png" style="width: 24px; height: 24px">
+                    <img src="../../../resources/Images/bar-chart.png" style="width: 28px; height: 28px">
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link py-3 bg-warning border-bottom border-black border-2" style="width: 83px">
-                    <img src="../../../resources/Images/football-field.png" style="width: 24px; height: 24px">
+                <a href="{{ route('fields.index') }}" class="nav-link bg-warning py-3 border-bottom border-black border-2" style="width: 83px">
+                    <img src="../../../resources/Images/football-field.png" style="width: 28px; height: 28px">
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{{ route('field_types.index') }}" class="nav-link py-3 border-bottom border-black border-2" style="width: 83px">
+                    <img src="../../../resources/Images/scalability.png" style="width: 28px; height: 28px">
                 </a>
             </li>
             <li class="nav-item">
                 <a href="{{ route('admin.customers') }}" class="nav-link py-3 border-bottom border-black border-2" style="width: 83px">
-                    <img src="../../../resources/Images/customer.png" style="width: 24px; height: 24px">
+                    <img src="../../../resources/Images/customer.png" style="width: 28px; height: 28px">
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{{ route('admin.orders') }}" class="nav-link py-3 border-bottom border-black border-2" style="width: 83px">
+                    <img src="../../../resources/Images/clipboard.png" style="width: 28px; height: 28px">
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{{ route('times.index') }}" class="nav-link py-3 border-bottom border-black border-2" style="width: 83px">
+                    <img src="../../../resources/Images/24-hours.png" style="width: 28px; height: 28px">
                 </a>
             </li>
             <li class="nav-item">
                 <a href="#" class="nav-link py-3 border-bottom border-black border-2" style="width: 83px">
-                    <img src="../../../resources/Images/clipboard.png" style="width: 24px; height: 24px">
+                    <img src="../../../resources/Images/setting.png" style="width: 28px; height: 28px">
                 </a>
             </li>
         </ul>

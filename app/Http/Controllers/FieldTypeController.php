@@ -9,6 +9,8 @@ use App\Http\Requests\UpdateFieldTypeRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Redirect;
+use PhpParser\Node\Expr\Cast\Int_;
+use Ramsey\Uuid\Type\Integer;
 
 class FieldTypeController extends Controller
 {
@@ -17,10 +19,14 @@ class FieldTypeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $field_types = FieldType::all();
-        return view('types.index', ['field_types' => $field_types]);
+        $fields = Field::all();
+        return view('field_types.index', [
+            'field_types' => $field_types,
+            'fields' => $fields,
+        ]);
     }
 
     /**

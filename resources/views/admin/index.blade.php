@@ -26,22 +26,37 @@
             <ul class=" nav nav-pills nav-flush flex-column mb-auto text-center">
                 <li class="nav-item">
                     <a href="#" class="nav-link bg-warning py-3 border-bottom border-black border-2" style="width: 83px">
-                        <img src="../resources/Images/bar-chart.png" style="width: 24px; height: 24px">
+                        <img src="../resources/Images/bar-chart.png" style="width: 28px; height: 28px">
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('fields.index') }}" class="nav-link py-3 border-bottom border-black border-2" style="width: 83px">
-                        <img src="../resources/Images/football-field.png" style="width: 24px; height: 24px">
+                        <img src="../resources/Images/football-field.png" style="width: 28px; height: 28px">
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('field_types.index') }}" class="nav-link py-3 border-bottom border-black border-2" style="width: 83px">
+                        <img src="../resources/Images/scalability.png" style="width: 28px; height: 28px">
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('admin.customers') }}" class="nav-link py-3 border-bottom border-black border-2" style="width: 83px">
-                        <img src="../resources/Images/customer.png" style="width: 24px; height: 24px">
+                        <img src="../resources/Images/customer.png" style="width: 28px; height: 28px">
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('admin.orders') }}" class="nav-link py-3 border-bottom border-black border-2" style="width: 83px">
-                        <img src="../resources/Images/clipboard.png" style="width: 24px; height: 24px">
+                        <img src="../resources/Images/clipboard.png" style="width: 28px; height: 28px">
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('times.index') }}" class="nav-link py-3 border-bottom border-black border-2" style="width: 83px">
+                        <img src="../resources/Images/24-hours.png" style="width: 28px; height: 28px">
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link py-3 border-bottom border-black border-2" style="width: 83px">
+                        <img src="../resources/Images/setting.png" style="width: 28px; height: 28px">
                     </a>
                 </li>
             </ul>
@@ -69,24 +84,17 @@
             <ul class="list-group list-group-flush border-top border-success border-4 my-4">
                 <li class="list-group-item d-flex justify-content-between align-items-start mt-4">
                     <div class="ms-2 me-auto">
-                        <div class="fw-bold">Sân 5</div>
-                        Số lượng sân 5
+                        <div class="fw-bold">Số sân</div>
+                        Tổng số sân
                     </div>
-                    <span class="fs-1">{{ $count5 }}</span>
+                    <span class="fs-1">{{ $fieldCount }}</span>
                 </li>
                 <li class="list-group-item d-flex justify-content-between align-items-start mt-4">
                     <div class="ms-2 me-auto">
-                        <div class="fw-bold">Sân 7</div>
-                        Số lượng sân 7
+                        <div class="fw-bold">Khung giờ</div>
+                        Số lượng khung giờ
                     </div>
-                    <span class="fs-1">{{ $count7 }}</span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-start mt-4">
-                    <div class="ms-2 me-auto">
-                        <div class="fw-bold">Sân 11</div>
-                        Số lượng sân 11
-                    </div>
-                    <span class="fs-1">{{ $count11 }}</span>
+                    <span class="fs-1">{{ $timeCount }}</span>
                 </li>
                 <li class="list-group-item d-flex justify-content-between align-items-start mt-4">
                     <div class="ms-2 me-auto">

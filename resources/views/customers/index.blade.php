@@ -35,11 +35,10 @@
                         <li class="nav-item">
                             <a class="nav-link text-white" href="{{ route('customers.contact') }}">Liên hệ</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">Đăng xuất</a>
+                        </li>
                     </ul>
-    {{--                <div id="register" class="col-2">--}}
-    {{--                    <a type="button" class="btn btn-outline-success" href="#">Đăng ký</a>--}}
-    {{--                    <a type="button" class="btn btn-outline-primary" href="#">Đăng nhập</a>--}}
-    {{--                </div>--}}
                 </div>
             </div>
         </nav>
@@ -130,10 +129,10 @@
                             </button>
                         </div>
                     </div>
-                    <div class="row mt-3" style="background-color: #05b50b">
+                    <div class="row mt-3 me-5" style="background-color: #05b50b">
                         <b class="text-white" style="font-size: x-large">GIỚI THIỆU</b>
                     </div>
-                    <div class="row" style="background-color: white">
+                    <div class="row me-5" style="background-color: white">
                         - Sân vận động SugmaStadium được xem là tổ hợp sân hiện đại. Mặt sân được đầu tư với cỏ đẹp, mềm mại, không trơn tượt.
                         <br>
                         - Hệ thống đèn chiếu sáng, đường chạy, lưới chắn bóng đều đẹp và đồng bộ, cũng cấp đủ ảnh sáng cho các đội chơi.

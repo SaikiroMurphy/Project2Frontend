@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Symfony\Component\HttpFoundation\Response;
 
-class checkLogin
+class checkLoginAdmin
 {
     /**
      * Handle an incoming request.
@@ -16,10 +16,10 @@ class checkLogin
      */
     public function handle(Request $request, Closure $next)
     {
-        if (session()->has('customers')) {
+        if (session()->has('admins')) {
             return $next($request);
         } else {
-            return Redirect::route('customers.login');
+            return Redirect::route('admin.login');
         }
     }
 }

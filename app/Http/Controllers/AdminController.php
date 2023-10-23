@@ -8,7 +8,9 @@ use App\Http\Requests\UpdateAdminRequest;
 use App\Models\Customer;
 use App\Models\Field;
 use App\Models\Order;
+use App\Models\Time;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
@@ -22,19 +24,17 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $count5 = Field::where('type_id', '1')->count();
-        $count7 = Field::where('type_id', '2')->count();
-        $count11 = Field::where('type_id', '3')->count();
+        $fieldCount = Field::count();
         $adCount = Admin::count();
         $custCount = Customer::count();
+        $timeCount = Time::count();
         $ordCount = Order::count();
         return view('admin.index', [
-            'count7' => $count7,
-            'count11' => $count11,
-            'count5' => $count5,
+            'fieldCount' => $fieldCount,
             'custCount' => $custCount,
             'adCount' => $adCount,
-            'ordCount' => $ordCount
+            'ordCount' => $ordCount,
+            'timeCount' => $timeCount
         ]);
     }
 
@@ -63,7 +63,14 @@ class AdminController extends Controller
      */
     public function store(StoreAdminRequest $request)
     {
-        //
+        $password = bcrypt($request->password);
+        $array = [];
+        $array = Arr::add($array, 'email', $request->email);
+        $array = Arr::add($array, 'phonenumber', $request->phonenumber);
+        $array = Arr::add($array, 'name', $request->name);
+        $array = Arr::add($array, 'password', $password);
+        Customer::create($array);
+        return Redirect::route('admin.login');
     }
 
     /**
@@ -118,13 +125,15 @@ class AdminController extends Controller
 
     public function loginProcess(Request $request) {
         $account = $request->only(['email', 'password']);
+//        $check = Auth::guard('admins')->attempt($account);
+//        dd($check);
         if(Auth::guard('admins')->attempt($account)) {
             $admin = Auth::guard('admins')->user();
             Auth::guard('admins')->login($admin);
             session(['admins', $admin]);
             return Redirect::route('admin.index');
         } else {
-            return Redirect::route('admin.index');
+            return Redirect::back();
         }
     }
 }

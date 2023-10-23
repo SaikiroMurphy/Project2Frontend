@@ -9,6 +9,7 @@ use Illuminate\Http\Client\Request;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
+use PhpParser\Node\Stmt\Return_;
 
 class CustomerController extends Controller
 {
@@ -50,12 +51,13 @@ class CustomerController extends Controller
      */
     public function store(StoreCustomerRequest $request)
     {
+        $password = bcrypt($request->password);
         $array = [];
         $array = Arr::add($array, 'email', $request->email);
         $array = Arr::add($array, 'address', $request->address);
         $array = Arr::add($array, 'phonenumber', $request->phonenumber);
         $array = Arr::add($array, 'name', $request->name);
-        $array = Arr::add($array, 'password', $request->password);
+        $array = Arr::add($array, 'password', $password);
         Customer::create($array);
         return Redirect::route('customers.login');
     }
@@ -93,12 +95,13 @@ class CustomerController extends Controller
      */
     public function update(UpdateCustomerRequest $request, Customer $customers)
     {
+        $password = bcrypt($request->password);
         $array = [];
         $array = Arr::add($array, 'name', $request->name);
         $array = Arr::add($array, 'address', $request->address);
         $array = Arr::add($array, 'phonenumber', $request->phonenumber);
         $array = Arr::add($array, 'email', $request->email);
-        $array = Arr::add($array, 'password', $request->password);
+        $array = Arr::add($array, 'password', $password);
         $customers->update($array);
         return Redirect::route('customers.index');
     }
@@ -114,25 +117,30 @@ class CustomerController extends Controller
         $del_cust = new Customer();
         $del_cust->id = $request->id;
         $del_cust->destroyCustomer();
-        return Redirect::route('customers.index');
+        return Redirect::route('admin.customers');
     }
-//
-//    public function login() {
-//        return view('customers.login');
-//    }
-//    public function loginProcess(\Illuminate\Http\Request $request) {
-//        $account = $request->only('email', 'password');
-//        // Xác thực đăng nhập
-//        if (Auth::guard('customers')->attempt($account)) {
-//            // Cho login
-//            // Lấy thông tin customers
-//            $customers = Auth::guard('customers')->user();
-//            Auth::login($customers);
-//            session(['customers' => $customers]);
+
+    public function login() {
+        return view('customers.login');
+    }
+    public function loginProcess(\Illuminate\Http\Request $request) {
+        $account = $request->only('email', 'password');
+        // Xác thực đăng nhập
+        if(Auth::guard('customers')->attempt($account)){
+//        dd($check);
+            // Cho login
+            // Lấy thông tin customers
+            $customers = Auth::guard('customers')->user();
+            Auth::guard('customers')->login($customers);
+            session(['customers' => $customers]);
+            return Redirect::route('customers.index');
+        } else {
+            // Quay về trang login
+            return Redirect::back();
+
+            // Mở code dưới để fix lỗi
+//            dd($account);
 //            return Redirect::route('customers.index');
-//        } else {
-//            // Quay về trang login
-//            return Redirect::back();
-//        }
-//    }
+        }
+    }
 }

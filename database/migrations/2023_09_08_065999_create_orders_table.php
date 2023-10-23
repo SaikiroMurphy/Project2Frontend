@@ -13,9 +13,8 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('total');
-            $table->foreignId('field_id')->constrained('fields');
-            $table->foreignId('time_id')->constrained('times');
+            $table->string('order_note')->nullable();
+            $table->bigInteger('total_price');
             $table->foreignId('admin_id')->constrained('admins');
             $table->foreignId('customer_id')->constrained('customers');
             $table->foreignId('status_id')->constrained('statuses');

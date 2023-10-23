@@ -33,12 +33,12 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{ route('fields.index') }}" class="nav-link bg-warning py-3 border-bottom border-black border-2" style="width: 83px">
+                <a href="{{ route('fields.index') }}" class="nav-link py-3 border-bottom border-black border-2" style="width: 83px">
                     <img src="../../resources/Images/football-field.png" style="width: 28px; height: 28px">
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{ route('field_types.index') }}" class="nav-link py-3 border-bottom border-black border-2" style="width: 83px">
+                <a href="#" class="nav-link bg-warning py-3 border-bottom border-black border-2" style="width: 83px">
                     <img src="../../resources/Images/scalability.png" style="width: 28px; height: 28px">
                 </a>
             </li>
@@ -78,45 +78,38 @@
     {{--Main--}}
     <div class="col col-11 ps-3">
 
-{{--        Breadcrumb--}}
+        {{--        Breadcrumb--}}
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ route('customers.index') }}">Trang chủ</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Quản lý sân</li>
+                <li class="breadcrumb-item active" aria-current="page">Quản lý loại sân</li>
             </ol>
         </nav>
 
-{{--        Title--}}
+        {{--        Title--}}
         <div>
-            <h1 class="text-success mt-4" style="font-family: 'Segoe UI Black'; font-size: xxx-large">QUẢN LÝ SÂN</h1>
+            <h1 class="text-success mt-4" style="font-family: 'Segoe UI Black'; font-size: xxx-large">QUẢN LÝ LOẠI SÂN</h1>
         </div>
         <div class="border-top border-success border-4 my-4">
 
-{{--            Table--}}
+            {{--            Table--}}
             <table class="table table-success table-striped" border="1px" cellpadding="0" cellspacing="0" width="100%">
                 <thead>
                 <tr>
                     <a class="btn btn-success btn-lg my-2" href="{{ route('fields.create') }}"><i class="fa-regular fa-square-plus fa-lg fa-bounce"></i></a>
-                    <th scope="col">ID sân</th>
-                    <th scope="col">Tên sân</th>
-                    <th scope="col">Ảnh sân</th>
-                    <th scope="col">Mô tả sân</th>
                     <th scope="col">Loại sân</th>
+                    <th scope="col">Số lượng sân</th>
+                    <th scope="col">Đơn giá</th>
                     <th scope="col">Tuỳ chọn</th>
                 </tr>
                 </thead>
 
                 <tbody>
-                @foreach($fields as $item)
+                @foreach($field_types as $item)
                     <tr>
-                        <th scope="row">{{ $item -> id }}</th>
-                        <td>{{ $item -> name }}</td>
-                        <td>
-                            <img src="{{ asset(\Illuminate\Support\Facades\Storage::url('admin/img/').$item->image) }}" width="100px" height="100px">
-                        </td>
-                        <td>{{ $item->description }}</td>
-                        <td>{{ $item->types->type }}</td>
-
+                        <td>{{ $item -> type }}</td>
+                        <td>{{ $fields -> where('type_id', $item->id) -> count() }}</td>
+                        <td>{{ $item -> price }}</td>
                         <td>
                             <a class="btn btn-warning btn-lg my-1" href="{{ route('fields.edit', $item->id) }}"><i class="fa-regular fa-pen-to-square fa-shake"></i></a>
                             <button type="button" class="btn btn-danger btn-lg my-1" data-bs-toggle="modal" data-bs-target="#myModal{{ $item->id }}"><i class="fa-solid fa-dumpster fa-shake"></i></button>
@@ -155,7 +148,6 @@
                 @endforeach
                 </tbody>
             </table>
-            {{ $fields->links() }}
         </div>
     </div>
 </div>

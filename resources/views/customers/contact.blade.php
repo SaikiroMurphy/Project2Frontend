@@ -35,6 +35,9 @@
                         <li class="nav-item">
                             <a class="nav-link active" href="#">Liên hệ</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">Đăng xuất</a>
+                        </li>
                     </ul>
                     {{--                <div id="register" class="col-2">--}}
                     {{--                    <a type="button" class="btn btn-outline-success" href="#">Đăng ký</a>--}}

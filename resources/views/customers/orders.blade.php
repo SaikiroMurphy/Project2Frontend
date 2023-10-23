@@ -36,6 +36,9 @@
                         <li class="nav-item">
                             <a class="nav-link text-white" href="{{ route('customers.contact') }}">Liên hệ</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">Đăng xuất</a>
+                        </li>
                     </ul>
                     {{--                <div id="register" class="col-2">--}}
                     {{--                    <a type="button" class="btn btn-outline-success" href="#">Đăng ký</a>--}}
@@ -137,28 +140,33 @@
                     </div>
                     <div class="row py-2" style="background-color: white">
                         <div class="col-6">
-                            <form class="" action="" method="post">
+                            <form class="needs-validation" action="" method="post" novalidate>
                                 <div class="form-floating mb-3">
-                                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                                    <label for="floatingInput">Email address</label>
+                                    <input type="email" class="form-control" id="floatingInput" required>
+                                    <label for="floatingInput" class="form-label">Email address</label>
+                                    <div class="invalid-feedback">Vui lòng điền thêm thông tin vào ô này</div>
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="floatingName" placeholder="Họ tên">
-                                    <label for="floatingName">Password</label>
+                                    <input type="text" class="form-control" id="floatingName" placeholder="Họ tên" required>
+                                    <label for="floatingName" class="form-label">Password</label>
+                                    <div class="invalid-feedback">Vui lòng điền thêm thông tin vào ô này</div>
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <input placeholder="Select date" class="form-control" type="date" id="Date" placeholder="Ngày đặt">
-                                    <label for="Date">Ngày đặt sân</label>
+                                    <input placeholder="Select date" class="form-control" type="date" id="Date" placeholder="Ngày đặt" required>
+                                    <label for="Date" class="form-label">Ngày đặt sân</label>
+                                    <div class="invalid-feedback">Vui lòng điền thêm thông tin vào ô này</div>
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <input placeholder="Select tim" class="form-control" type="time" id="TimeOp" placeholder="Giờ bắt đầu">
-                                    <label for="TimeOp">Giờ bắt đầu</label>
+                                    <input placeholder="Select tim" class="form-control" type="time" id="TimeOp" placeholder="Giờ bắt đầu" required>
+                                    <label for="TimeOp" class="form-label">Giờ bắt đầu</label>
+                                    <div class="invalid-feedback">Vui lòng điền thêm thông tin vào ô này</div>
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <input placeholder="Select date" class="form-control" type="time" id="TimeEn" placeholder="Giờ kết thúc">
-                                    <label for="TimeEn">Giờ kết thúc</label>
+                                    <input placeholder="Select date" class="form-control" type="time" id="TimeEn" placeholder="Giờ kết thúc" required>
+                                    <label for="TimeEn" class="form-label">Giờ kết thúc</label>
+                                    <div class="invalid-feedback">Ô này không được để trống</div>
                                 </div>
-
+                                <button type="submit" class="btn btn-outline-success">Đặt sân</button>
                             </form>
                         </div>
                     </div>
@@ -185,7 +193,7 @@
     </div>
 
 </div>
-
+<script src="../../resources/js/validate.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 </body>
