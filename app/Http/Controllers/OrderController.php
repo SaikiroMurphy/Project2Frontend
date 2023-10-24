@@ -23,7 +23,7 @@ class OrderController extends Controller
             ->with('times')
             ->with('statuses')
             ->simplePaginate(5);
-        return view('admin.orders', ['orders'=> $orders]);
+        return view('dashboard.orders', ['orders'=> $orders]);
     }
 
     /**

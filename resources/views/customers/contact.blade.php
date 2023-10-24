@@ -27,7 +27,7 @@
                             <a class="nav-link text-white" aria-current="page" href="{{route('customers.index')}}">Giới thiệu</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ route('admin.index') }}">Quản trị</a>
+                            <a class="nav-link text-white" href="{{ route('dashboard.index') }}">Quản trị</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white" href="{{ route('customers.orders') }}">Đặt sân</a>

@@ -10,7 +10,7 @@
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
     >
     <script src="https://kit.fontawesome.com/dfb2727f7d.js" crossorigin="anonymous"></script>
-    <link rel="icon" type="image/x-icon" href="../resources/Images/ava-web.png">
+    <link rel="icon" type="image/x-icon" href="../../resources/Images/ava-web.png">
     <title>Trang quản trị</title>
     <link
         href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.css"
@@ -19,106 +19,126 @@
 </head>
 <body style="background-color: whitesmoke">
 <div class="d-flex flex-nowrap">
-        <div class="d-flex flex-column flex-shrink-0 bg-success bg-gradient border-end border-black border-1 ps-2">
-            <a href="{{ route('customers.index') }}" class="link-dark" style="width: 83px">
-                <img src="../resources/Images/ava-web.png" style="width: 100%">
-            </a>
-            <ul class=" nav nav-pills nav-flush flex-column mb-auto text-center">
-                <li class="nav-item">
-                    <a href="#" class="nav-link bg-warning py-3 border-bottom border-black border-2" style="width: 83px">
-                        <img src="../resources/Images/bar-chart.png" style="width: 28px; height: 28px">
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ route('fields.index') }}" class="nav-link py-3 border-bottom border-black border-2" style="width: 83px">
-                        <img src="../resources/Images/football-field.png" style="width: 28px; height: 28px">
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ route('field_types.index') }}" class="nav-link py-3 border-bottom border-black border-2" style="width: 83px">
-                        <img src="../resources/Images/scalability.png" style="width: 28px; height: 28px">
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ route('admin.customers') }}" class="nav-link py-3 border-bottom border-black border-2" style="width: 83px">
-                        <img src="../resources/Images/customer.png" style="width: 28px; height: 28px">
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ route('admin.orders') }}" class="nav-link py-3 border-bottom border-black border-2" style="width: 83px">
-                        <img src="../resources/Images/clipboard.png" style="width: 28px; height: 28px">
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ route('times.index') }}" class="nav-link py-3 border-bottom border-black border-2" style="width: 83px">
-                        <img src="../resources/Images/24-hours.png" style="width: 28px; height: 28px">
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link py-3 border-bottom border-black border-2" style="width: 83px">
-                        <img src="../resources/Images/setting.png" style="width: 28px; height: 28px">
-                    </a>
-                </li>
-            </ul>
-            <div class="dropup border-top">
-                <a href="#" class="d-flex align-items-center justify-content-center p-3 link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="../resources/Images/ava-web.png" alt="Admin" width="42" height="42" class="rounded-circle">
+    <div class="d-flex flex-column flex-shrink-0 bg-success bg-gradient border-end border-black border-1 ps-2">
+        <a href="{{ route('customers.index') }}" class="link-dark" style="width: 83px">
+            <img src="../../resources/Images/ava-web.png" style="width: 100%">
+        </a>
+        <ul class=" nav nav-pills nav-flush flex-column mb-auto text-center">
+            <li class="nav-item">
+                <a href="{{ route('dashboard.index') }}" class="nav-link py-3 border-bottom border-black border-2" style="width: 83px">
+                    <img src="../../resources/Images/bar-chart.png" style="width: 28px; height: 28px">
                 </a>
-                <ul class="dropdown-menu text-small shadow">
-                    <li>
-                        <a class="dropdown-item" href="#" >Đăng xuất</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="col col-11 ps-3">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{ route('customers.index') }}">Trang chủ</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Thống kê</li>
-                </ol>
-            </nav>
-            <div>
-                <h1 class="text-success mt-4" style="font-family: 'Segoe UI Black'; font-size: xxx-large">THỐNG KÊ</h1>
-            </div>
-            <ul class="list-group list-group-flush border-top border-success border-4 my-4">
-                <li class="list-group-item d-flex justify-content-between align-items-start mt-4">
-                    <div class="ms-2 me-auto">
-                        <div class="fw-bold">Số sân</div>
-                        Tổng số sân
-                    </div>
-                    <span class="fs-1">{{ $fieldCount }}</span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-start mt-4">
-                    <div class="ms-2 me-auto">
-                        <div class="fw-bold">Khung giờ</div>
-                        Số lượng khung giờ
-                    </div>
-                    <span class="fs-1">{{ $timeCount }}</span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-start mt-4">
-                    <div class="ms-2 me-auto">
-                        <div class="fw-bold">Người dùng</div>
-                        Số lượng người dùng đã đăng ký
-                    </div>
-                    <span class="fs-1">{{ $custCount }}</span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-start mt-4">
-                    <div class="ms-2 me-auto">
-                        <div class="fw-bold">Nhân viên</div>
-                        Số lượng nhân viên
-                    </div>
-                    <span class="fs-1">{{ $adCount }}</span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-start mt-4">
-                    <div class="ms-2 me-auto">
-                        <div class="fw-bold">Đặt sân</div>
-                        Số lượng đơn đặt sân
-                    </div>
-                    <span class="fs-1">{{ $ordCount }}</span>
+            </li>
+            <li class="nav-item">
+                <a href="{{ route('fields.index') }}" class="nav-link py-3 border-bottom border-black border-2" style="width: 83px">
+                    <img src="../../resources/Images/football-field.png" style="width: 28px; height: 28px">
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{{ route('field_types.index') }}" class="nav-link py-3 border-bottom border-black border-2" style="width: 83px">
+                    <img src="../../resources/Images/scalability.png" style="width: 28px; height: 28px">
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{{ route('dashboard.customers') }}" class="nav-link py-3 border-bottom border-black border-2" style="width: 83px">
+                    <img src="../../resources/Images/customer.png" style="width: 28px; height: 28px">
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{{ route('dashboard.orders') }}" class="nav-link py-3 border-bottom border-black border-2" style="width: 83px">
+                    <img src="../../resources/Images/clipboard.png" style="width: 28px; height: 28px">
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{{ route('times.index') }}" class="nav-link py-3 border-bottom border-black border-2" style="width: 83px">
+                    <img src="../../resources/Images/24-hours.png" style="width: 28px; height: 28px">
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link bg-warning py-3 border-bottom border-black border-2" style="width: 83px">
+                    <img src="../../resources/Images/setting.png" style="width: 28px; height: 28px">
+                </a>
+            </li>
+        </ul>
+        <div class="dropup border-top">
+            <a href="#" class="d-flex align-items-center justify-content-center p-3 link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="../../resources/Images/ava-web.png" alt="Admin" width="42" height="42" class="rounded-circle">
+            </a>
+            <ul class="dropdown-menu text-small shadow">
+                <li>
+                    <a class="dropdown-item" href="#" >Đăng xuất</a>
                 </li>
             </ul>
         </div>
+    </div>
+    <div class="col col-11 ps-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ route('customers.index') }}">Trang chủ</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Quản lý nhân viên</li>
+            </ol>
+        </nav>
+        <div>
+            <h1 class="text-success mt-4" style="font-family: 'Segoe UI Black'; font-size: xxx-large">QUẢN LÝ NHÂN VIÊN</h1>
+        </div>
+        <div class="border-top border-success border-4 my-4">
+            <table class="table table-success table-striped" border="1px" cellpadding="0" cellspacing="0" width="100%">
+                <thead>
+                <tr>
+                    <a class="btn btn-success btn-lg my-2" href="{{ route('admin.create') }}"><i class="fa-regular fa-square-plus fa-lg fa-bounce"></i></a>
+                    <th scope="col" class="text-center">ID</th>
+                    <th scope="col">Họ và tên</th>
+                    <th scope="col">Số điện thoại</th>
+                    <th scope="col">Email</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach($admins as $item)
+                    <tr>
+                        <td class="text-center">{{ $item -> id }}</td>
+                        <td>{{ $item -> name }}</td>
+                        <td>{{ $item->phonenumber }}</td>
+                        <td>{{ $item->email }}</td>
+                        <td>
+                            <button type="button" class="btn btn-danger btn-lg my-1" data-bs-toggle="modal" data-bs-target="#myModal{{ $item->id }}"><i class="fa-solid fa-dumpster fa-shake"></i></button>
+
+                            {{--                            Modal--}}
+                            <div class="modal fade" id="myModal{{ $item->id }}">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <!-- Modal Header -->
+                                        <div class="modal-header">
+                                            <h4 class="modal-title">Xác nhận xóa</h4>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                        </div>
+
+                                        <!-- Modal body -->
+                                        <div class="modal-body">
+                                            Bạn có chắc chắn muốn xóa mục này?
+                                        </div>
+
+                                        <!-- Modal footer -->
+                                        <div class="modal-footer">
+                                            <div class="modal-footer">
+                                                <button class="btn btn-light" data-bs-dismiss="modal">Không</button>
+                                                <form method="post" action="{{ route('customers.destroy', $item->id) }}">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button class="btn btn-danger">Xoá</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                @endforeach
+                </tbody>
+
+            </table>
+        </div>
+    </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>

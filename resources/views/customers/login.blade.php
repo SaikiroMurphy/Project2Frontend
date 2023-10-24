@@ -30,7 +30,7 @@
                         <p class="mt-3">Password:</p> <input type="password" name="password"><br>
                         <a class="btn btn-white" href="{{ route('customers.register') }}">Đăng ký</a>
                         <button class="btn btn-white mt-3">Đăng nhập</button>
-                        <a href="{{ route('admin.login') }}" class="btn btn-white">Quản trị viên</a>
+                        <a href="{{ route('dashboard.login') }}" class="btn btn-white">Quản trị viên</a>
                     </form>
                 </div>
             </div>

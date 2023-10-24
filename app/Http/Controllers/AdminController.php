@@ -14,6 +14,7 @@ use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
+use function Ramsey\Uuid\v1;
 
 class AdminController extends Controller
 {
@@ -22,14 +23,14 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function dashboard()
     {
         $fieldCount = Field::count();
         $adCount = Admin::count();
         $custCount = Customer::count();
         $timeCount = Time::count();
         $ordCount = Order::count();
-        return view('admin.index', [
+        return view('dashboard.index', [
             'fieldCount' => $fieldCount,
             'custCount' => $custCount,
             'adCount' => $adCount,
@@ -38,9 +39,16 @@ class AdminController extends Controller
         ]);
     }
 
+    public function index(){
+        $admin = Admin::all();
+        return view('admin.index',[
+            'admins' => $admin
+        ]);
+    }
+
     public function customers() {
         $customers = Customer::paginate(10);
-        return view('admin.customers', [
+        return view('dashboard.customers', [
             'customers' => $customers
         ]);
     }
@@ -53,6 +61,7 @@ class AdminController extends Controller
     public function create()
     {
         //
+        return view('admin.create');
     }
 
     /**
@@ -69,8 +78,8 @@ class AdminController extends Controller
         $array = Arr::add($array, 'phonenumber', $request->phonenumber);
         $array = Arr::add($array, 'name', $request->name);
         $array = Arr::add($array, 'password', $password);
-        Customer::create($array);
-        return Redirect::route('admin.login');
+        Admin::create($array);
+        return Redirect::route('admin.index');
     }
 
     /**
@@ -120,7 +129,7 @@ class AdminController extends Controller
 
     // Function login
     public function login() {
-        return view('admin.login');
+        return view('dashboard.login');
     }
 
     public function loginProcess(Request $request) {
@@ -130,8 +139,9 @@ class AdminController extends Controller
         if(Auth::guard('admins')->attempt($account)) {
             $admin = Auth::guard('admins')->user();
             Auth::guard('admins')->login($admin);
-            session(['admins', $admin]);
-            return Redirect::route('admin.index');
+            session(['admins' => $admin]);
+//            dd($account);
+            return Redirect::route('dashboard.index');
         } else {
             return Redirect::back();
         }

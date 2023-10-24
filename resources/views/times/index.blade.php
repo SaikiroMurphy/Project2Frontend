@@ -28,7 +28,7 @@
         </a>
         <ul class=" nav nav-pills nav-flush flex-column mb-auto text-center">
             <li class="nav-item">
-                <a href="{{ route('admin.index') }}" class="nav-link py-3 border-bottom border-black border-2" style="width: 83px">
+                <a href="{{ route('dashboard.index') }}" class="nav-link py-3 border-bottom border-black border-2" style="width: 83px">
                     <img src="../../resources/Images/bar-chart.png" style="width: 28px; height: 28px">
                 </a>
             </li>
@@ -38,17 +38,17 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link py-3 border-bottom border-black border-2" style="width: 83px">
+                <a href="{{ route('field_types.index') }}" class="nav-link py-3 border-bottom border-black border-2" style="width: 83px">
                     <img src="../../resources/Images/scalability.png" style="width: 28px; height: 28px">
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{ route('admin.customers') }}" class="nav-link py-3 border-bottom border-black border-2" style="width: 83px">
+                <a href="{{ route('dashboard.customers') }}" class="nav-link py-3 border-bottom border-black border-2" style="width: 83px">
                     <img src="../../resources/Images/customer.png" style="width: 28px; height: 28px">
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{ route('admin.orders') }}" class="nav-link py-3 border-bottom border-black border-2" style="width: 83px">
+                <a href="{{ route('dashboard.orders') }}" class="nav-link py-3 border-bottom border-black border-2" style="width: 83px">
                     <img src="../../resources/Images/clipboard.png" style="width: 28px; height: 28px">
                 </a>
             </li>
@@ -58,7 +58,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link py-3 border-bottom border-black border-2" style="width: 83px">
+                <a href="{{ route('admin.index') }}" class="nav-link py-3 border-bottom border-black border-2" style="width: 83px">
                     <img src="../../resources/Images/setting.png" style="width: 28px; height: 28px">
                 </a>
             </li>

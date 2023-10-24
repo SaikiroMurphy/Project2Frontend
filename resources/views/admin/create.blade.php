@@ -15,7 +15,7 @@
     />
     <script src="https://kit.fontawesome.com/dfb2727f7d.js" crossorigin="anonymous"></script>
     <link rel="icon" type="image/x-icon" href="../../../resources/Images/ava-web.png">
-    <title>Trang quản trị - Quản lý sân</title>
+    <title>Trang quản trị - Thêm nhân viên</title>
 </head>
 <body style="background-color: whitesmoke">
 <div class="d-flex flex-nowrap">
@@ -75,54 +75,48 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ route('customers.index') }}">Trang chủ</a></li>
-                <li class="breadcrumb-item"><a href="{{ route('fields.index') }}">Quản lý sân</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Thêm sân</li>
+                <li class="breadcrumb-item"><a href="#">Quản lý nhân viên</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Thêm nhân viên</li>
             </ol>
         </nav>
         <div>
-            <h1 class="text-success mt-4" style="font-family: 'Segoe UI Black'; font-size: xxx-large">THÊM SÂN</h1>
+            <h1 class="text-success mt-4" style="font-family: 'Segoe UI Black'; font-size: xxx-large">THÊM NHÂN VIÊN</h1>
         </div>
         <div class="border-top border-success border-4 my-4">
-            {{--            Nhập dữ liệu vào đây đi tk loz--}}
-            <form method="post" action="{{ route('fields.store') }}" enctype="multipart/form-data">
+            <form class="needs-validation" method="post" action="{{ route('admin.store') }}" novalidate>
                 @csrf
                 <div class="row">
-                    <div class="col-5 mx-3">
-                        <div class="form-floating mb-3">
-                            <input type="text" class="form-control mt-3" id="floatingName" placeholder="Tên sân" name="name">
-                            <label for="floatingName">Tên sân</label>
+                    <div class="col-8 mx-3">
+                        <div class="form-floating mb-4">
+                            <input type="text" class="form-control mt-3" id="floatingName" placeholder="Tên nhân viên" name="name" required>
+                            <label for="floatingName">Tên nhân viên</label>
+                            <div class="invalid-feedback">Vui lòng điền thông tin vào ô này</div>
                         </div>
-                        <div class="form-floating mb-3">
-                            <textarea class="form-control mt-3" id="floatingDesc" placeholder="Mô tả" name="description"></textarea>
-                            <label for="floatingDesc">Mô Tả</label>
+                        <div class="form-floating mb-4">
+                            <input type="email" class="form-control mt-3" id="floatingEmail" placeholder="Email" name="email" required>
+                            <label for="floatingEmail">Email</label>
+                            <div class="invalid-feedback">Vui lòng điền thông tin vào ô này</div>
                         </div>
-                        <div class="form-floating mb-3">
-                            @foreach($field_types as $typeitem)
-                                <div class="form-check form-check-inline mt-3">
-                                    <input class="form-check-input" type="radio" name="type_id" value="{{ $typeitem->id }}">
-                                    <label class="form-check-label" for="type_id">{{ $typeitem->type }}</label>
-                                </div>
-                            @endforeach
+                        <div class="form-floating mb-4">
+                            <input type="text" class="form-control mt-3" id="floatingNumber" placeholder="Số điện thoại" name="phonenumber" required>
+                            <label for="floatingNumber">Số điện thoại</label>
+                            <div class="invalid-feedback">Vui lòng điền thông tin vào ô này</div>
                         </div>
-                    </div>
-                    <div class="col-5 mx-3 my-3">
-                        Chọn ảnh sân: <input type="file" accept="image/*" name="image" id="file" onchange="loadFile(event)">
-                        <img class="mt-1" id="output" width="500">
+                        <div class="form-floating mb-4">
+                            <input type="password" class="form-control mt-3" id="floatingPass" placeholder="Mật khẩu" name="password" required>
+                            <label for="floatingPass">Mật khẩu</label>
+                            <div class="invalid-feedback">Vui lòng điền thông tin vào ô này</div>
+                        </div>
                     </div>
                 </div>
-                <button class="btn btn-success btn-lg mt-3">Thêm sân</button>
+                <button class="btn btn-success btn-lg mt-3">Thêm Nhân viên</button>
             </form>
         </div>
     </div>
 </div>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-    var loadFile = function(event) {
-        var image = document.getElementById('output');
-        image.src = URL.createObjectURL(event.target.files[0]);
-    };
-</script>
+<script src="../../../resources/js/validate.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 </body>
 </html>
 

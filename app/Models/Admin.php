@@ -10,6 +10,9 @@ class Admin extends Model implements \Illuminate\Contracts\Auth\Authenticatable
 {
     use HasFactory;
     public $timestamps = false;
+    protected $table = 'admins';
+    protected $fillable = ['email', 'phonenumber', 'name', 'password'];
+
 
     use Authenticatable;
 }

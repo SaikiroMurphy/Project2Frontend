@@ -117,7 +117,7 @@ class CustomerController extends Controller
         $del_cust = new Customer();
         $del_cust->id = $request->id;
         $del_cust->destroyCustomer();
-        return Redirect::route('admin.customers');
+        return Redirect::route('dashboard.customers');
     }
 
     public function login() {

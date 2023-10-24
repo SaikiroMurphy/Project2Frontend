@@ -52,8 +52,8 @@ class FieldController extends Controller
     public function store(StoreFieldRequest $request)
     {
         $img_name = $request->file('image')->getClientOriginalName();
-        if(!Storage::exists('/public/admin/img'.$img_name)) {
-            Storage::putFileAs('public/admin/img', $request->file('image'), $img_name);
+        if(!Storage::exists('/public/dashboard/img'.$img_name)) {
+            Storage::putFileAs('public/dashboard/img', $request->file('image'), $img_name);
         }
         $array = [];
         $array = Arr::add($array, 'name', $request->name);
@@ -104,8 +104,8 @@ class FieldController extends Controller
     public function update(UpdateFieldRequest $request, Field $field)
     {
         $img_name = $request->file('image')->getClientOriginalName();
-        if(!Storage::exists('/public/admin/img'.$img_name)) {
-            Storage::putFileAs('public/admin/img', $request->file('image'), $img_name);
+        if(!Storage::exists('/public/dashboard/img'.$img_name)) {
+            Storage::putFileAs('public/dashboard/img', $request->file('image'), $img_name);
         }
         $array = [];
         $array = Arr::add($array, 'name', $request->name);
