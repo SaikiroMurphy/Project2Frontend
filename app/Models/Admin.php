@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Admin extends Model implements \Illuminate\Contracts\Auth\Authenticatable
 {
@@ -15,4 +16,17 @@ class Admin extends Model implements \Illuminate\Contracts\Auth\Authenticatable
 
 
     use Authenticatable;
+
+    public function edit() {
+        $admins = DB::table('admins')
+            ->where('id', $this->id)
+            ->get();
+        return $admins;
+    }
+
+    public function destroyAdmin() {
+        DB::table('admins')
+            ->where('id', $this->id)
+            ->delete();
+    }
 }

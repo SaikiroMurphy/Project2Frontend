@@ -24,7 +24,6 @@
                 <div class="col align-self-center">
                     <form class="border border-warning bg-success py-5" method="post" action="{{ route('customers.loginProcess') }}" style="color: black">
                         <label style="font-size: 50px">SugmaStadium</label><br>
-                        <label style="font-size: 25px">#DITMEDUCANH</label>
                         @csrf
                         <p class="">Email:</p>    <input type="email" name="email"><br>
                         <p class="mt-3">Password:</p> <input type="password" name="password"><br>

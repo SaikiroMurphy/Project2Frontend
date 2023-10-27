@@ -26,9 +26,9 @@
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="#">Giới thiệu</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ route('dashboard.index') }}">Quản trị</a>
-                        </li>
+{{--                        <li class="nav-item">--}}
+{{--                            <a class="nav-link text-white" href="{{ route('dashboard.index') }}">Quản trị</a>--}}
+{{--                        </li>--}}
                         <li class="nav-item">
                             <a class="nav-link text-white" href="{{ route('customers.orders') }}">Đặt sân</a>
                         </li>

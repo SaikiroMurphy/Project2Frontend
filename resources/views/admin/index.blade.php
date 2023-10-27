@@ -121,7 +121,7 @@
                                         <div class="modal-footer">
                                             <div class="modal-footer">
                                                 <button class="btn btn-light" data-bs-dismiss="modal">Không</button>
-                                                <form method="post" action="{{ route('customers.destroy', $item->id) }}">
+                                                <form method="post" action="{{ route('admin.destroy', $item->id) }}">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button class="btn btn-danger">Xoá</button>

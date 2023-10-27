@@ -43,6 +43,8 @@ Route::prefix('/dashboard')->group(function (){
     Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'index'])->name('admin.index');
     Route::get('/admin/create', [\App\Http\Controllers\AdminController::class, 'create'])->name('admin.create');
     Route::post('/admin/store', [\App\Http\Controllers\AdminController::class, 'store'])->name('admin.store');
+    Route::delete('/admin/{id}', [\App\Http\Controllers\AdminController::class, 'destroy'])->name('admin.destroy');
+
 });
 
 Route::middleware('checkLogin')->prefix('/customers')->group(function () {
@@ -52,3 +54,6 @@ Route::middleware('checkLogin')->prefix('/customers')->group(function () {
 Route::middleware('checkLoginAdmin')->prefix('/dashboard')->group(function () {
     Route::get('/', [\App\Http\Controllers\AdminController::class, 'dashboard'])->name('dashboard.index');
 });
+
+Route::get('form', [\App\Http\Controllers\FieldTypeController::class, 'showTypes']);
+Route::post('/showFieldsInTypes', [\App\Http\Controllers\FieldController::class, 'showFieldsInTypes']);

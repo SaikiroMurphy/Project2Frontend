@@ -83,7 +83,6 @@
             <h1 class="text-success mt-4" style="font-family: 'Segoe UI Black'; font-size: xxx-large">THÊM SÂN</h1>
         </div>
         <div class="border-top border-success border-4 my-4">
-            {{--            Nhập dữ liệu vào đây đi tk loz--}}
             <form method="post" action="{{ route('fields.store') }}" enctype="multipart/form-data">
                 @csrf
                 <div class="row">

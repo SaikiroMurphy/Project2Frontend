@@ -122,9 +122,13 @@ class AdminController extends Controller
      * @param  \App\Models\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Admin $admin)
+    public function destroy(Admin $admin, \Illuminate\Http\Request $request)
     {
         //
+        $del_ad = new Admin();
+        $del_ad->id = $request->id;
+        $del_ad->destroyAdmin();
+        return Redirect::route('admin.index');
     }
 
     // Function login
