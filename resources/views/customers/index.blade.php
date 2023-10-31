@@ -33,7 +33,7 @@
                             <a class="nav-link text-white" href="{{ route('customers.orders') }}">Đặt sân</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ route('customers.contact') }}">Liên hệ</a>
+                            <a class="nav-link text-white" href="{{ route('customers.history') }}">Lịch sử</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white" href="#">Đăng xuất</a>

@@ -37,8 +37,8 @@ class CustomerController extends Controller
         ]);
     }
 
-    public function contact() {
-        return view('customers.contact');
+    public function history() {
+        return view('customers.history');
     }
 
 

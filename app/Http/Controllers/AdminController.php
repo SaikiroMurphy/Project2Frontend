@@ -150,4 +150,10 @@ class AdminController extends Controller
             return Redirect::back();
         }
     }
+
+    public function logout() {
+        Auth::guard('admins')->logout();
+        session()->forget('admins');
+        return Redirect::route('dashboard.login');
+    }
 }

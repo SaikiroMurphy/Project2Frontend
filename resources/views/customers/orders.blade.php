@@ -17,23 +17,27 @@
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color:#05b50b">
             <div class="container-fluid">
-                <a class="navbar-brand" href="{{route('customers.index')}}"><img src="../../resources/Images/ava-web.png" alt="" height=10% width=10%> SugmaStadium</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand" href="{{route('customers.index')}}"><img
+                        src="../../resources/Images/ava-web.png" alt="" height=10% width=10%> SugmaStadium</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="offset-md-5 collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-2">
                         <li class="nav-item">
-                            <a class="nav-link text-white" aria-current="page" href="{{route('customers.index')}}">Giới thiệu</a>
+                            <a class="nav-link text-white" aria-current="page" href="{{route('customers.index')}}">Giới
+                                thiệu</a>
                         </li>
-{{--                        <li class="nav-item">--}}
-{{--                            <a class="nav-link text-white" href="{{ route('dashboard.index') }}">Quản trị</a>--}}
-{{--                        </li>--}}
+                        {{--                        <li class="nav-item">--}}
+                        {{--                            <a class="nav-link text-white" href="{{ route('dashboard.index') }}">Quản trị</a>--}}
+                        {{--                        </li>--}}
                         <li class="nav-item">
                             <a class="nav-link active" href="#">Đặt sân</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ route('customers.contact') }}">Liên hệ</a>
+                            <a class="nav-link text-white" href="{{ route('customers.history') }}">Lịch sử</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white" href="#">Đăng xuất</a>
@@ -47,9 +51,11 @@
             </div>
         </nav>
         <!-- End navbar -->
-{{--        Main--}}
+        {{--        Main--}}
         <div class="container-fluid" style="background-color: white; color: black">
-            <marquee behavior="" direction="right" scrollamount="15">Trang web cho thuê sân bóng đá số 1 Châu Phi moidaden</marquee>
+            <marquee behavior="" direction="right" scrollamount="15">Trang web cho thuê sân bóng đá số 1 Châu Phi
+                moidaden
+            </marquee>
         </div>
         <div class="container-fluid my-md-3 bd-layout">
             <div class="row">
@@ -112,23 +118,33 @@
                         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img height="300" src="https://backyardsidekick.com/wp-content/uploads/2020/04/soccer-field-with-white-marks.jpg" class="d-block w-100" alt="...">
+                                    <img height="300"
+                                         src="https://backyardsidekick.com/wp-content/uploads/2020/04/soccer-field-with-white-marks.jpg"
+                                         class="d-block w-100" alt="...">
                                 </div>
                                 <div class="carousel-item">
-                                    <img height="300" src="https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ung.sidearmsports.com/images/2023/3/28/IMG_8243_F57vK.jpg" class="d-block w-100" alt="...">
+                                    <img height="300"
+                                         src="https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ung.sidearmsports.com/images/2023/3/28/IMG_8243_F57vK.jpg"
+                                         class="d-block w-100" alt="...">
                                 </div>
                                 <div class="carousel-item">
-                                    <img height="300" src="https://yoursoccerhome.com/wp-content/uploads/2019/09/AdobeStock_264249960-1024x682.jpeg" class="d-block w-100" alt="...">
+                                    <img height="300"
+                                         src="https://yoursoccerhome.com/wp-content/uploads/2019/09/AdobeStock_264249960-1024x682.jpeg"
+                                         class="d-block w-100" alt="...">
                                 </div>
                                 <div class="carousel-item">
-                                    <img height="300" src="https://patch.com/img/cdn20/users/103600/20210910/073254/styles/patch_image/public/turf-field-opens-goal-___10185029396.jpg" class="d-block w-100" alt="...">
+                                    <img height="300"
+                                         src="https://patch.com/img/cdn20/users/103600/20210910/073254/styles/patch_image/public/turf-field-opens-goal-___10185029396.jpg"
+                                         class="d-block w-100" alt="...">
                                 </div>
                             </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                            <button class="carousel-control-prev" type="button"
+                                    data-bs-target="#carouselExampleControls" data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Previous</span>
                             </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                            <button class="carousel-control-next" type="button"
+                                    data-bs-target="#carouselExampleControls" data-bs-slide="next">
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Next</span>
                             </button>
@@ -141,17 +157,20 @@
                         <div class="row py-2 me-5" style="background-color: white">
                             <div class="col-6">
                                 <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="floatingName" placeholder="Họ tên" required>
+                                    <input type="text" class="form-control" id="floatingName" placeholder="Họ tên"
+                                           value="" required>
                                     <label for="floatingName" class="form-label">Họ tên</label>
                                     <div class="invalid-feedback">Ô này không được để trống</div>
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="floatingNumber" placeholder="Số điện thoại" required>
+                                    <input type="text" class="form-control" id="floatingNumber"
+                                           placeholder="Số điện thoại" required>
                                     <label for="floatingNumber" class="form-label">Số điện thoại</label>
                                     <div class="invalid-feedback">Ô này không được để trống</div>
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <input placeholder="Select date" class="form-control" type="date" id="Date" placeholder="Ngày đặt sân" required>
+                                    <input placeholder="Select date" class="form-control" type="date" id="Date"
+                                           placeholder="Ngày đặt sân" required>
                                     <label for="Date" class="form-label">Ngày đặt sân</label>
                                     <div class="invalid-feedback">Ô này không được để trống</div>
                                 </div>
@@ -176,15 +195,41 @@
                             </div>
                             <div class="col-6">
                                 <div class="form-floating mb-3">
-                                    <select class="form-select" id="Types" required>
-                                        @foreach($types as $items)
-                                            <option value="{{ $items -> id }}">{{ $items -> type }}</option>
+                                    <select class="form-select" id="Types" onchange="call()" required>
+                                        <option value="" selected>Loại sân</option>
+
+                                    @foreach($types as $items)
+                                            <option id="type{{$items->id}}"
+                                                    value="{{ $items -> id }}">{{ $items -> type }}</option>
                                         @endforeach
                                     </select>
                                     <label for="Types">Loại sân</label>
                                     <div class="invalid-feedback">Ô này không được để trống</div>
                                 </div>
+                                <div class="form-floating mb-3">
+                                    <select class="form-select Fields" id="Fields" onchange="call()" required>
+                                        <option value="" selected>Sân</option>
+                                        @foreach($fields->where('type_id', '1') as $items)
+                                            <option value="{{ $items -> id }}">{{ $items -> name }}</option>
+                                        @endforeach
+                                    </select>
+{{--                                    @foreach($order as $items)--}}
+{{--                                        @if($items->field_id == $fields->id)--}}
+{{--                                            @if($order->date == date)--}}
 
+{{--                                            @endif--}}
+{{--                                            @foreach($times as $times)--}}
+
+{{--                                                @if($times->timeStart < $items->timeEnd || $times->timeEnd > $items->timeStart)--}}
+
+{{--                                                @else--}}
+{{--                                                    <option value="{{ $items -> id }}">{{ $items -> name }}</option>--}}
+{{--                                                @endif--}}
+{{--                                            @endforeach--}}
+{{--                                        @endif--}}
+{{--                                    @endforeach--}}
+                                    <div class="invalid-feedback">Ô này không được để trống</div>
+                                </div>
                             </div>
                             <button type="submit" class="btn btn-outline-success">Đặt sân</button>
                         </div>
@@ -195,26 +240,38 @@
         {{--End Main--}}
 
         {{--Footer--}}
-        <footer class="d-flex flex-warp justify-content-between align-items-center py-2" style="background-color: #05b50b">
-            <div class="col-md-4 align-items-center text-white ms-3" style="--bs-text-opacity: .75;">© 2023 SugmaStadium Copyright.</div>
+        <footer class="d-flex flex-warp justify-content-between align-items-center py-2"
+                style="background-color: #05b50b">
+            <div class="col-md-4 align-items-center text-white ms-3" style="--bs-text-opacity: .75;">© 2023 SugmaStadium
+                Copyright.
+            </div>
             <ul class="nav col-md-4 justify-content-end list-unstyled d-flex me-3">
                 <li class="ms-3" style="font-size: 25px">
-                    <a href="https://twitter.com" class="text-white" style="--bs-text-opacity: .75;"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://twitter.com" class="text-white" style="--bs-text-opacity: .75;"><i
+                            class="fa-brands fa-twitter"></i></a>
                 </li>
                 <li class="ms-3" style="font-size: 25px">
-                    <a href="https://www.facebook.com" class="text-white" style="--bs-text-opacity: .75;"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.facebook.com" class="text-white" style="--bs-text-opacity: .75;"><i
+                            class="fa-brands fa-facebook"></i></a>
                 </li>
                 <li class="ms-3" style="font-size: 25px">
-                    <a href="https://github.com" class="text-white" style="--bs-text-opacity: .75;"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://github.com" class="text-white" style="--bs-text-opacity: .75;"><i
+                            class="fa-brands fa-github"></i></a>
                 </li>
             </ul>
         </footer>
     </div>
 
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="../../resources/js/show.js"></script>
 <script src="../../resources/js/validate.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+
 </body>
 </html>

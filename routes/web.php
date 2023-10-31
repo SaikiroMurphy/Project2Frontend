@@ -18,18 +18,26 @@ Route::get('/', function () {
 });
 
 Route::prefix('/customers')->group(function () {
-    Route::get('/orders', [\App\Http\Controllers\CustomerController::class, 'order'])->name('customers.orders');
-    Route::get('/contact', [\App\Http\Controllers\CustomerController::class, 'contact'])->name('customers.contact');
     Route::get('/login', [\App\Http\Controllers\CustomerController::class, 'login'])->name('customers.login');
     Route::post('/loginProcess', [\App\Http\Controllers\CustomerController::class, 'loginProcess'])->name('customers.loginProcess');
     Route::get('/register', [\App\Http\Controllers\CustomerController::class, 'create'])->name('customers.register');
     Route::post('/register', [\App\Http\Controllers\CustomerController::class, 'store'])->name('customers.store');
-    Route::delete('/customers/{id}', [\App\Http\Controllers\CustomerController::class, 'destroy'])->name('customers.destroy');
 });
 
 Route::prefix('/dashboard')->group(function (){
     Route::get('/login', [\App\Http\Controllers\AdminController::class, 'login'])->name('dashboard.login');
     Route::post('/loginProcess', [\App\Http\Controllers\AdminController::class, 'loginProcess'])->name('dashboard.loginProcess');
+});
+
+Route::middleware('checkLogin')->prefix('/customers')->group(function () {
+   Route::get('/', [\App\Http\Controllers\CustomerController::class, 'index'])->name('customers.index');
+    Route::get('/orders', [\App\Http\Controllers\CustomerController::class, 'order'])->name('customers.orders');
+    Route::get('/history', [\App\Http\Controllers\CustomerController::class, 'history'])->name('customers.history');
+    Route::delete('/customers/{id}', [\App\Http\Controllers\CustomerController::class, 'destroy'])->name('customers.destroy');
+});
+
+Route::middleware('checkLoginAdmin')->prefix('/dashboard')->group(function () {
+    Route::get('/', [\App\Http\Controllers\AdminController::class, 'dashboard'])->name('dashboard.index');
     Route::get('/fields',[\App\Http\Controllers\FieldController::class, 'index'])->name('fields.index');
     Route::get('/fields/create', [\App\Http\Controllers\FieldController::class, 'create'])->name('fields.create');
     Route::post('/fields/store', [\App\Http\Controllers\FieldController::class, 'store'])->name('fields.store');
@@ -38,22 +46,13 @@ Route::prefix('/dashboard')->group(function (){
     Route::get('/fields/{field}/edit', [\App\Http\Controllers\FieldController::class, 'edit'])->name('fields.edit');
     Route::put('/fields/{field}/edit', [\App\Http\Controllers\FieldController::class, 'update'])->name('fields.update');
     Route::get('/order', [\App\Http\Controllers\OrderController::class, 'index'])->name('dashboard.orders');
+    Route::put('/order/{order}/update', [\App\Http\Controllers\OrderDetailController::class, 'update'])->name('orders.update');
     Route::get('/field_types', [\App\Http\Controllers\FieldTypeController::class, 'index'])->name('field_types.index');
     Route::get('/times', [\App\Http\Controllers\TimeController::class, 'index'])->name('times.index');
     Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'index'])->name('admin.index');
     Route::get('/admin/create', [\App\Http\Controllers\AdminController::class, 'create'])->name('admin.create');
     Route::post('/admin/store', [\App\Http\Controllers\AdminController::class, 'store'])->name('admin.store');
     Route::delete('/admin/{id}', [\App\Http\Controllers\AdminController::class, 'destroy'])->name('admin.destroy');
-
+    Route::get('/logout', [\App\Http\Controllers\AdminController::class, 'logout'])->name('dashboard.logout');
 });
 
-Route::middleware('checkLogin')->prefix('/customers')->group(function () {
-   Route::get('/', [\App\Http\Controllers\CustomerController::class, 'index'])->name('customers.index');
-});
-
-Route::middleware('checkLoginAdmin')->prefix('/dashboard')->group(function () {
-    Route::get('/', [\App\Http\Controllers\AdminController::class, 'dashboard'])->name('dashboard.index');
-});
-
-Route::get('form', [\App\Http\Controllers\FieldTypeController::class, 'showTypes']);
-Route::post('/showFieldsInTypes', [\App\Http\Controllers\FieldController::class, 'showFieldsInTypes']);

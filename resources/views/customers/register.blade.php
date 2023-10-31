@@ -22,14 +22,14 @@
         <div class="container text-center">
             <div class="row d-flex align-items-center justify-content-center" style="height: 750px">
                 <div class="col align-self-center">
-                    <form class="border border-warning bg-success py-5" method="post" action="{{ route('customers.store') }}" style="color: black">
+                    <form class="border border-warning bg-success py-5" method="post" action="{{ route('customers.store') }}" style="color: black" novalidate>
                         <label style="font-size: 50px">SugmaStadium</label><br>
                         @csrf
-                        <p>Email:</p><input type="email" name="email"><br>
-                        <p>Địa chỉ:</p><input type="text" name="address"><br>
-                        <p>Số điện thoại:</p><input type="text" name="phonenumber"><br>
-                        <p>Họ và tên</p><input type="text" name="name"><br>
-                        <p>Mật khẩu:</p><input type="password" name="password"><br>
+                        <p>Email:</p><input type="email" name="email" required><br>
+                        <p>Địa chỉ:</p><input type="text" name="address" required><br>
+                        <p>Số điện thoại:</p><input type="text" name="phonenumber" required><br>
+                        <p>Họ và tên</p><input type="text" name="name" required><br>
+                        <p>Mật khẩu:</p><input type="password" name="password" required><br>
                         <a href="{{ route('customers.login') }}" class="btn btn-warning mt-3">Quay lại</a>
                         <button class="btn btn-warning mt-3">Đăng ký</button>
                     </form>

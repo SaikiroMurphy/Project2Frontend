@@ -1,21 +1,37 @@
-var url = "{{ url('/showFieldsInTypes') }}";
-$("select[name='types']").change(function(){
-    var type_id = $(this).val();
-    var token = $("input[name='_token']").val();
-    $.ajax({
-        url: url,
-        method: 'POST',
-        data: {
-            country_id: type_id,
-            _token: token
-        },
-        success: function(data) {
-            $("select[name='types']").html('');
-            $.each(data, function(key, value){
-                $("select[name='fields']").append(
-                    "<option value=" + value.id + ">" + value.name + "</option>"
-                );
-            });
-        }
-    });
+$(function (){
+    $('.Fields').hide();
+    // $('#img').hide();
 });
+function call()
+{
+    // Nếu check thì hiện form tiếp theo
+
+    $(document).on('change', '#Types', function() {
+        var value = $(this).val();
+    })
+
+    // var value  = $('#Types').val();
+    // $.ajax({
+    //     type: ''
+    // })
+//     if(types)
+//     {
+//         $('.Fields').show();
+//
+//     } else
+//     {
+//         $('.Fields').hide();
+//     }
+// }
+// function call2()
+// {
+//     var fields  = $('#Fields').val();
+//     // if(fields)
+//     // {
+//     //     $('#img').show();
+//     // }
+//     // else
+//     // {
+//     //     $('#img').hide();
+//     // }
+}

@@ -33,7 +33,7 @@
                             <a class="nav-link text-white" href="{{ route('customers.orders') }}">Đặt sân</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="#">Liên hệ</a>
+                            <a class="nav-link active" href="#">Lịch sử</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white" href="#">Đăng xuất</a>
@@ -134,7 +134,7 @@
                         </div>
                     </div>
                     <div class="row mt-3" style="background-color: #05b50b">
-                        <b class="text-white" style="font-size: x-large">LIÊN HỆ</b>
+                        <b class="text-white" style="font-size: x-large">LỊCH SỬ ĐẶT SÂN</b>
                     </div>
                     <div class="row" style="background-color: white">
 

@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Order;
 use App\Http\Requests\StoreOrderRequest;
 use App\Http\Requests\UpdateOrderRequest;
+use App\Models\OrderDetail;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Redirect;
 
 class OrderController extends Controller
 {
@@ -15,15 +18,10 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
-        $orders = Order::with('customers')
-            ->with('fields')
-            ->with('customers')
-            ->with('admins')
-            ->with('times')
-            ->with('statuses')
-            ->simplePaginate(5);
-        return view('dashboard.orders', ['orders'=> $orders]);
+        $orders = OrderDetail::all();
+        return view('dashboard.orders', [
+            'orders'=> $orders
+        ]);
     }
 
     /**
@@ -79,6 +77,16 @@ class OrderController extends Controller
     public function update(UpdateOrderRequest $request, Order $order)
     {
         //
+        $array = [];
+        $array = Arr::add($array, 'order_note', $request -> order_note);
+        $array = Arr::add($array, 'admin_id', $request -> admin_id);
+        $array = Arr::add($array, 'customer_id', $request -> customer_id);
+        $array = Arr::add($array, 'status', $request -> status);
+        $array = Arr::add($array, 'date', $request -> date);
+        $order->update($array);
+        return Redirect::route('dashboard.orders', [
+            'orders' => $order
+        ]);
     }
 
     /**

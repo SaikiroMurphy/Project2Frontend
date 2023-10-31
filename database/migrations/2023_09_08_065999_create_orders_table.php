@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->string('order_note')->nullable();
-            $table->bigInteger('total_price');
             $table->foreignId('admin_id')->constrained('admins');
             $table->foreignId('customer_id')->constrained('customers');
-            $table->foreignId('status_id')->constrained('statuses');
+            $table->integer('status');
+            $table->date('date');
         });
     }
 

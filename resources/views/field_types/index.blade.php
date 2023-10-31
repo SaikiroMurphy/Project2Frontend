@@ -109,7 +109,7 @@
                     <tr>
                         <td>{{ $item -> type }}</td>
                         <td>{{ $fields -> where('type_id', $item->id) -> count() }}</td>
-                        <td>{{ $item -> price }}</td>
+                        <td>{{ number_format($item -> price, 0, '.', ',') }}đ</td>
 {{--                        <td>--}}
 {{--                            <a class="btn btn-warning btn-lg my-1" href="{{ route('fields.edit', $item->id) }}"><i class="fa-regular fa-pen-to-square fa-shake"></i></a>--}}
 {{--                            <button type="button" class="btn btn-danger btn-lg my-1" data-bs-toggle="modal" data-bs-target="#myModal{{ $item->id }}"><i class="fa-solid fa-dumpster fa-shake"></i></button>--}}

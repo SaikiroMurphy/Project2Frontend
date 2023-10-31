@@ -60,14 +60,6 @@ class FieldTypeController extends Controller
      * @param  \App\Models\FieldType  $fieldType
      * @return \Illuminate\Http\Response
      */
-    public function showFields()
-    {
-        //
-        $types = FieldType::all();
-        return view('customers.orders',[
-            'types' => $types,
-        ]);
-    }
 
     /**
      * Show the form for editing the specified resource.

@@ -105,7 +105,7 @@
                 <tbody>
                 @foreach($times as $item)
                     <tr>
-                        <td>{{ $item -> time }}</td>
+                        <td>{{ $item -> timeStart }} - {{ $item -> timeEnd }}</td>
 {{--                        <td>--}}
 {{--                            <a class="btn btn-warning btn-lg my-1" href="{{ route('fields.edit', $item->id) }}"><i class="fa-regular fa-pen-to-square fa-shake"></i></a>--}}
 {{--                            <button type="button" class="btn btn-danger btn-lg my-1" data-bs-toggle="modal" data-bs-target="#myModal{{ $item->id }}"><i class="fa-solid fa-dumpster fa-shake"></i></button>--}}

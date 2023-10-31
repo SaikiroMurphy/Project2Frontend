@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Field;
+use App\Models\Order;
 use App\Models\OrderDetail;
 use App\Http\Requests\StoreOrderDetailRequest;
 use App\Http\Requests\UpdateOrderDetailRequest;
+use App\Models\Time;
 
 class OrderDetailController extends Controller
 {
@@ -15,7 +18,13 @@ class OrderDetailController extends Controller
      */
     public function index()
     {
-        //
+//        $details = OrderDetail::with('fields')
+//            ->with('orders')
+//            ->with('times');
+//
+//        return view('dashboard.orders', [
+//            'details' =>  $details
+//        ]);
     }
 
     /**

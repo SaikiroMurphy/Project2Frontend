@@ -82,32 +82,39 @@
                 <thead>
                 <tr>
                     <th scope="col">ID đơn</th>
-                    <th scope="col">Khách hàng</th>
-                    <th scope="col">Người quản lý</th>
                     <th scope="col">Sân</th>
                     <th scope="col">Thời gian</th>
-                    <th scope="col">Thành tiền</th>
+                    <th scope="col">Khách hàng</th>
+                    <th scope="col">Người quản lý</th>
+                    <th scope="col">Ghi chú</th>
                     <th scope="col">Trạng thái</th>
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($orders as $item)
-                    <tr>
-                        <th scope="row">{{ $item -> id }}</th>
-                        <td>{{ $item -> customers -> name }}</td>
-                        <td>{{ $item -> admins -> name }}</td>
-                        <td>{{ $item -> fields -> name }}</td>
-                        <td>
-                            {{ $item -> times -> timeStart }} - {{ $item -> times -> timeEnd }}<br>
-                            {{ $item -> times -> date }}
-                        </td>
-                        <td>{{ $item -> total }}</td>
-                        <td>{{ $item -> statuses -> status }}</td>
-{{--                        <td>--}}
-{{--                            <a class="btn" href="{{ route('customers.edit', $item->id) }}">Sửa</a>--}}
-{{--                            <button type="button" class="btn btn-danger btn-lg my-1" data-bs-toggle="modal" data-bs-target="#myModal{{ $item->id }}"><i class="fa-solid fa-dumpster fa-shake"></i></button>--}}
+                    @foreach($orders as $item)
+                        <tr>
+                            <td>{{ $item -> orders -> id }}</td>
+                            <td>{{ $item -> fields -> name }}</td>
+                            <td>{{ $item -> orders -> date }}<br>
+                                {{ $item -> times -> timeStart }} - {{ $item -> times -> timeEnd }}</td>
+                            <td>{{ $item -> orders -> customers -> name }}</td>
+                            <td>{{ $item -> orders -> admins -> name }}</td>
+                            <td>{{ $item -> orders -> order_note }}</td>
+                            <td>@if(($item -> orders -> status) == 0)
+                                    Chưa xác nhận
+                                @elseif(($item -> orders -> status) == 1)
+                                    Xác nhận
+                                @else
+                                    Từ chối
+                                @endif
+                            </td>
+                            <td>
+                                <a href="{{ route('orders.update', $orders) }}" methods="post" type="button" class="btn btn-success btn-lg my-1" value="1"><i class="fa-solid fa-square-check"></i></a>
+                                <a href="{{ route('orders.update', $orders) }}" methods="post" type="button" class="btn btn-danger btn-lg my-1" value="2"><i class="fa-solid fa-square-xmark"></i></a>
+                            </td>
+                        </tr>
 
-{{--                            --}}{{--Modal--}}
+{{--                            Modal--}}
 {{--                            <div class="modal fade" id="myModal{{ $item->id }}">--}}
 {{--                                <div class="modal-dialog">--}}
 {{--                                    <div class="modal-content">--}}
@@ -137,12 +144,10 @@
 {{--                                </div>--}}
 {{--                            </div>--}}
 {{--                        </td>--}}
-                    </tr>
-                @endforeach
+                    @endforeach
                 </tbody>
-
             </table>
-            {{ $orders->links() }}
+{{--            {{ $orders->links() }}--}}
         </div>
     </div>
 </div>

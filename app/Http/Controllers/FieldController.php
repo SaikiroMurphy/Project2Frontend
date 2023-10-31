@@ -132,11 +132,4 @@ class FieldController extends Controller
         return Redirect::route('fields.index');
     }
 
-    public function showFieldsInTypes(Request $request)
-    {
-        if($request -> ajax()) {
-            $fields = Field::where('type_id', $request -> type_id) -> select('id', 'name') -> get();
-            return response() -> json($fields);
-        }
-    }
 }
