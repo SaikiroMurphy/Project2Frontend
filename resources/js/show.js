@@ -1,37 +1,27 @@
-$(function (){
-    $('.Fields').hide();
-    // $('#img').hide();
+$(document).ready(function() {
+    $('#types').on('change', function() {
+        var type_id = $(this).val();
+        if(type_id) {
+            $.ajax({
+                url: 'orders/getFields/' + type_id,
+                type: "GET",
+                data : {"_token":"{{ csrf_token() }}"},
+                dataType: "json",
+                success:function(data)
+                {
+                    if(data){
+                        $('#fields').empty();
+                        $('#fields').append('<option value="" selected>Chọn sân</option>');
+                        $.each(data, function(key, fields){
+                            $('select[name="fields"]').append('<option value="'+ key +'">' + fields.name + '</option>');
+                        });
+                    }else{
+                        $('#fields').empty();
+                    }
+                }
+            });
+        }else{
+            $('#fields').empty();
+        }
+    });
 });
-function call()
-{
-    // Nếu check thì hiện form tiếp theo
-
-    $(document).on('change', '#Types', function() {
-        var value = $(this).val();
-    })
-
-    // var value  = $('#Types').val();
-    // $.ajax({
-    //     type: ''
-    // })
-//     if(types)
-//     {
-//         $('.Fields').show();
-//
-//     } else
-//     {
-//         $('.Fields').hide();
-//     }
-// }
-// function call2()
-// {
-//     var fields  = $('#Fields').val();
-//     // if(fields)
-//     // {
-//     //     $('#img').show();
-//     // }
-//     // else
-//     // {
-//     //     $('#img').hide();
-//     // }
-}

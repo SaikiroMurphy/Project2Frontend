@@ -175,45 +175,36 @@
                                     <div class="invalid-feedback">Ô này không được để trống</div>
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <select class="form-select" id="TimeOp" required>
-                                        @foreach($times as $items)
-                                            <option value="{{ $items -> id }}">{{ $items -> time }}</option>
+                                    <select class="form-select" id="Time" required>
+                                        <option value="" selected>Chọn khung giờ</option>
+
+                                    @foreach($times as $items)
+                                            <option value="{{ $items -> id }}">{{ $items -> timeStart }} - {{ $items -> timeEnd }}</option>
                                         @endforeach
                                     </select>
-                                    <label for="TimeOp">Giờ bắt đầu</label>
-                                    <div class="invalid-feedback">Ô này không được để trống</div>
-                                </div>
-                                <div class="form-floating mb-3">
-                                    <select class="form-select" id="TimeEnd" required>
-                                        @foreach($times as $items)
-                                            <option value="{{ $items -> id }}">{{ $items -> time }}</option>
-                                        @endforeach
-                                    </select>
-                                    <label for="TimeEnd">Giờ kết thúc</label>
+                                    <label for="TimeEnd">Khung giờ</label>
                                     <div class="invalid-feedback">Ô này không được để trống</div>
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="form-floating mb-3">
-                                    <select class="form-select" id="Types" onchange="call()" required>
-                                        <option value="" selected>Loại sân</option>
+                                    <select class="form-select" id="types" required>
+                                        <option value="" selected>Chọn loại sân</option>
 
                                     @foreach($types as $items)
                                             <option id="type{{$items->id}}"
                                                     value="{{ $items -> id }}">{{ $items -> type }}</option>
                                         @endforeach
                                     </select>
-                                    <label for="Types">Loại sân</label>
+                                    <label for="types">Loại sân</label>
                                     <div class="invalid-feedback">Ô này không được để trống</div>
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <select class="form-select Fields" id="Fields" onchange="call()" required>
-                                        <option value="" selected>Sân</option>
-                                        @foreach($fields->where('type_id', '1') as $items)
-                                            <option value="{{ $items -> id }}">{{ $items -> name }}</option>
-                                        @endforeach
+                                    <select class="form-select Fields" name="fields" id="fields" onchange="" required>
                                     </select>
-{{--                                    @foreach($order as $items)--}}
+                                    <label for="fields">Sân</label>
+
+                                    {{--                                    @foreach($order as $items)--}}
 {{--                                        @if($items->field_id == $fields->id)--}}
 {{--                                            @if($order->date == date)--}}
 
@@ -266,12 +257,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="../../resources/js/show.js"></script>
 <script src="../../resources/js/validate.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
 
 </body>
 </html>

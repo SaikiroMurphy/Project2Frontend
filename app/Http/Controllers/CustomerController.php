@@ -153,4 +153,10 @@ class CustomerController extends Controller
 //            return Redirect::route('customers.index');
         }
     }
+
+    public function getFields(\Illuminate\Http\Request $request) {
+        $id  = $request -> id;
+        $fields = Field::where('type_id', $id)->get();
+        return response()->json($fields);
+    }
 }

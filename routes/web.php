@@ -32,6 +32,7 @@ Route::prefix('/dashboard')->group(function (){
 Route::middleware('checkLogin')->prefix('/customers')->group(function () {
    Route::get('/', [\App\Http\Controllers\CustomerController::class, 'index'])->name('customers.index');
     Route::get('/orders', [\App\Http\Controllers\CustomerController::class, 'order'])->name('customers.orders');
+    Route::get('/orders/getFields/{id}', [\App\Http\Controllers\CustomerController::class, 'getFields']);
     Route::get('/history', [\App\Http\Controllers\CustomerController::class, 'history'])->name('customers.history');
     Route::delete('/customers/{id}', [\App\Http\Controllers\CustomerController::class, 'destroy'])->name('customers.destroy');
 });
@@ -55,4 +56,6 @@ Route::middleware('checkLoginAdmin')->prefix('/dashboard')->group(function () {
     Route::delete('/admin/{id}', [\App\Http\Controllers\AdminController::class, 'destroy'])->name('admin.destroy');
     Route::get('/logout', [\App\Http\Controllers\AdminController::class, 'logout'])->name('dashboard.logout');
 });
+
+
 
