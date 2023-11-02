@@ -36,7 +36,7 @@ Route::middleware('checkLogin')->prefix('/customers')->group(function () {
     Route::get('/orders/getFields/{id}', [\App\Http\Controllers\OrderController::class, 'getFields']);
     Route::get('/orders/getTimes/', [\App\Http\Controllers\OrderController::class, 'getTimes']);
 
-    Route::get('/history', [\App\Http\Controllers\CustomerController::class, 'history'])->name('customers.history');
+    Route::get('/history', [\App\Http\Controllers\OrderController::class, 'history'])->name('customers.history');
     Route::delete('/customers/{id}', [\App\Http\Controllers\CustomerController::class, 'destroy'])->name('customers.destroy');
 });
 

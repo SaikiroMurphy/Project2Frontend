@@ -17,18 +17,22 @@
     <div style="background-color: rgba(0, 0, 0, 0.7);">
         <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color:#05b50b">
             <div class="container-fluid">
-                <a class="navbar-brand" href="{{route('customers.index')}}"><img src="../../resources/Images/ava-web.png" alt="" height=10% width=10%> SugmaStadium</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand" href="{{route('customers.index')}}"><img
+                        src="../../resources/Images/ava-web.png" alt="" height=10% width=10%> SugmaStadium</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="offset-md-5 collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-2">
                         <li class="nav-item">
-                            <a class="nav-link text-white" aria-current="page" href="{{route('customers.index')}}">Giới thiệu</a>
+                            <a class="nav-link text-white" aria-current="page" href="{{route('customers.index')}}">Giới
+                                thiệu</a>
                         </li>
-{{--                        <li class="nav-item">--}}
-{{--                            <a class="nav-link text-white" href="{{ route('dashboard.index') }}">Quản trị</a>--}}
-{{--                        </li>--}}
+                        {{--                        <li class="nav-item">--}}
+                        {{--                            <a class="nav-link text-white" href="{{ route('dashboard.index') }}">Quản trị</a>--}}
+                        {{--                        </li>--}}
                         <li class="nav-item">
                             <a class="nav-link text-white" href="{{ route('customers.orders') }}">Đặt sân</a>
                         </li>
@@ -48,7 +52,9 @@
         </nav>
         <!-- End navbar -->
         <div class="container-fluid" style="background-color: white; color: black">
-            <marquee behavior="" direction="right" scrollamount="15">Trang web cho thuê sân bóng đá số 1 Châu Phi moidaden</marquee>
+            <marquee behavior="" direction="right" scrollamount="15">Trang web cho thuê sân bóng đá số 1 Châu Phi
+                moidaden
+            </marquee>
         </div>
         <div class="container-fluid my-md-3 bd-layout">
             <div class="row">
@@ -111,23 +117,33 @@
                         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img height="300" src="https://backyardsidekick.com/wp-content/uploads/2020/04/soccer-field-with-white-marks.jpg" class="d-block w-100" alt="...">
+                                    <img height="300"
+                                         src="https://backyardsidekick.com/wp-content/uploads/2020/04/soccer-field-with-white-marks.jpg"
+                                         class="d-block w-100" alt="...">
                                 </div>
                                 <div class="carousel-item">
-                                    <img height="300" src="https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ung.sidearmsports.com/images/2023/3/28/IMG_8243_F57vK.jpg" class="d-block w-100" alt="...">
+                                    <img height="300"
+                                         src="https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ung.sidearmsports.com/images/2023/3/28/IMG_8243_F57vK.jpg"
+                                         class="d-block w-100" alt="...">
                                 </div>
                                 <div class="carousel-item">
-                                    <img height="300" src="https://yoursoccerhome.com/wp-content/uploads/2019/09/AdobeStock_264249960-1024x682.jpeg" class="d-block w-100" alt="...">
+                                    <img height="300"
+                                         src="https://yoursoccerhome.com/wp-content/uploads/2019/09/AdobeStock_264249960-1024x682.jpeg"
+                                         class="d-block w-100" alt="...">
                                 </div>
                                 <div class="carousel-item">
-                                    <img height="300" src="https://patch.com/img/cdn20/users/103600/20210910/073254/styles/patch_image/public/turf-field-opens-goal-___10185029396.jpg" class="d-block w-100" alt="...">
+                                    <img height="300"
+                                         src="https://patch.com/img/cdn20/users/103600/20210910/073254/styles/patch_image/public/turf-field-opens-goal-___10185029396.jpg"
+                                         class="d-block w-100" alt="...">
                                 </div>
                             </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                            <button class="carousel-control-prev" type="button"
+                                    data-bs-target="#carouselExampleControls" data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Previous</span>
                             </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                            <button class="carousel-control-next" type="button"
+                                    data-bs-target="#carouselExampleControls" data-bs-slide="next">
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Next</span>
                             </button>
@@ -152,13 +168,22 @@
                             <tbody>
                             @foreach($orders as $item)
                                 <tr>
-                                <td>{{ $item -> id }}</td>
-                                <td>{{ $item -> order_details -> fields -> name }}</td>
-                                <td>{{ $item -> date }}<br>
-                                    {{ $item -> times -> timeStart }} - {{ $item -> times -> timeEnd }}</td>
-                                <td>{{ $item -> customers -> name }}</td>
-                                <td>{{ $item -> admins -> name }}</td>
-                                <td>{{ $item -> order_note }}</td>
+                                    <td>{{ $item -> order_id }}</td>
+                                    <td>{{ $item -> field_id}}</td>
+                                    <td>{{ $item -> order_details -> customer_id }}<br>
+                                        {{ $item -> times -> timeStart }} - {{ $item -> times -> timeEnd }}</td>
+                                    <td>{{ $item -> orders -> admins -> name }}</td>
+                                    <td>{{ $item -> orders -> customers -> name }}</td>
+                                    <td>{{ $item -> orders -> order_note }}</td>
+                                    <td>
+                                        @if(($item -> orders -> status) == 0)
+                                            Chưa xác nhận
+                                        @elseif(($item -> orders -> status) == 1)
+                                            Xác nhận
+                                        @else
+                                            Từ chối
+                                       @endif
+                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>
@@ -167,26 +192,34 @@
                 </div>
             </div>
         </div>
-{{--        End Main--}}
+        {{--        End Main--}}
 
         {{--Footer--}}
-        <footer class="d-flex flex-warp justify-content-between align-items-center py-2" style="background-color: #05b50b">
-            <div class="col-md-4 align-items-center text-white ms-3" style="--bs-text-opacity: .75;">© 2023 SugmaStadium Copyright.</div>
+        <footer class="d-flex flex-warp justify-content-between align-items-center py-2"
+                style="background-color: #05b50b">
+            <div class="col-md-4 align-items-center text-white ms-3" style="--bs-text-opacity: .75;">© 2023 SugmaStadium
+                Copyright.
+            </div>
             <ul class="nav col-md-4 justify-content-end list-unstyled d-flex me-3">
                 <li class="ms-3" style="font-size: 25px">
-                    <a href="https://twitter.com" class="text-white" style="--bs-text-opacity: .75;"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://twitter.com" class="text-white" style="--bs-text-opacity: .75;"><i
+                            class="fa-brands fa-twitter"></i></a>
                 </li>
                 <li class="ms-3" style="font-size: 25px">
-                    <a href="https://www.facebook.com" class="text-white" style="--bs-text-opacity: .75;"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.facebook.com" class="text-white" style="--bs-text-opacity: .75;"><i
+                            class="fa-brands fa-facebook"></i></a>
                 </li>
                 <li class="ms-3" style="font-size: 25px">
-                    <a href="https://github.com" class="text-white" style="--bs-text-opacity: .75;"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://github.com" class="text-white" style="--bs-text-opacity: .75;"><i
+                            class="fa-brands fa-github"></i></a>
                 </li>
             </ul>
         </footer>
     </div>
 </div>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 </body>
 </html>

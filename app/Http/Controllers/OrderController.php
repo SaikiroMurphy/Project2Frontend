@@ -11,6 +11,7 @@ use App\Models\OrderDetail;
 use App\Models\Time;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 
 class OrderController extends Controller
 {
@@ -35,6 +36,18 @@ class OrderController extends Controller
             'times' => $times,
             'types' => $types,
             'fields' => $fields
+        ]);
+    }
+
+    public function history() {
+        if (Session::exists('customers')) {
+//            dd(Session::get('customers')['id']);
+            $customers = Session::get('customers')['id'];
+            $details = OrderDetail::where('order_id', '=', 1) -> get();
+        }
+//        Session::put(['customers' => $customers]);
+        return view('customers.history', [
+            'details' => $details
         ]);
     }
 

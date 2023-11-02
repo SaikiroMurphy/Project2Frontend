@@ -8,6 +8,7 @@ use App\Models\OrderDetail;
 use App\Http\Requests\StoreOrderDetailRequest;
 use App\Http\Requests\UpdateOrderDetailRequest;
 use App\Models\Time;
+use Illuminate\Support\Facades\Session;
 
 class OrderDetailController extends Controller
 {

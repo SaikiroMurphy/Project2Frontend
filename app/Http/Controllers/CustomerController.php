@@ -8,6 +8,7 @@ use App\Http\Requests\UpdateCustomerRequest;
 use App\Models\Field;
 use App\Models\FieldType;
 use App\Models\Order;
+use App\Models\OrderDetail;
 use App\Models\Time;
 use Illuminate\Http\Client\Request;
 use Illuminate\Support\Arr;
@@ -27,21 +28,6 @@ class CustomerController extends Controller
     {
         return view('customers.index');
     }
-
-    public function history(\Illuminate\Http\Request $request) {
-        if (Session::exists('customers')) {
-//            dd(Session::get('customers')['id']);
-            $customers = Session::get('customers')['id'];
-            $orders = Order::where('customer_id', $customers);
-            dd($orders);
-        }
-//        Session::put(['customers' => $customers]);
-        return view('customers.history',
-            ['orders' => $orders]
-        );
-    }
-
-
 
     /**
      * Show the form for creating a new resource.

@@ -109,8 +109,8 @@
                                 @endif
                             </td>
                             <td>
-                                <a href="{{ route('orders.update', $orders) }}" methods="post" type="button" class="btn btn-success btn-lg my-1" value="1"><i class="fa-solid fa-square-check"></i></a>
-                                <a href="{{ route('orders.update', $orders) }}" methods="post" type="button" class="btn btn-danger btn-lg my-1" value="2"><i class="fa-solid fa-square-xmark"></i></a>
+                                <a href="#" methods="post" type="button" class="btn btn-success btn-lg my-1" value="1"><i class="fa-solid fa-square-check"></i></a>
+                                <a href="#" methods="post" type="button" class="btn btn-danger btn-lg my-1" value="2"><i class="fa-solid fa-square-xmark"></i></a>
                             </td>
                         </tr>
 
