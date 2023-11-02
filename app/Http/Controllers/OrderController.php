@@ -119,7 +119,8 @@ class OrderController extends Controller
         $fields = Field::where('type_id', $id)->get();
         return response()->json($fields);
     }
-    public function getTimes(\Illuminate\Http\Request $request) {
+    public function getTimes() {
+        $order =
         $times = Time::all();
         return response()->json($times);
     }

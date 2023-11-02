@@ -7,11 +7,13 @@ use App\Http\Requests\StoreCustomerRequest;
 use App\Http\Requests\UpdateCustomerRequest;
 use App\Models\Field;
 use App\Models\FieldType;
+use App\Models\Order;
 use App\Models\Time;
 use Illuminate\Http\Client\Request;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 use PhpParser\Node\Stmt\Return_;
 
 class CustomerController extends Controller
@@ -26,8 +28,17 @@ class CustomerController extends Controller
         return view('customers.index');
     }
 
-    public function history() {
-        return view('customers.history');
+    public function history(\Illuminate\Http\Request $request) {
+        if (Session::exists('customers')) {
+//            dd(Session::get('customers')['id']);
+            $customers = Session::get('customers')['id'];
+            $orders = Order::where('customer_id', $customers);
+            dd($orders);
+        }
+//        Session::put(['customers' => $customers]);
+        return view('customers.history',
+            ['orders' => $orders]
+        );
     }
 
 

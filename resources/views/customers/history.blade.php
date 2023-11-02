@@ -137,7 +137,32 @@
                         <b class="text-white" style="font-size: x-large">LỊCH SỬ ĐẶT SÂN</b>
                     </div>
                     <div class="row" style="background-color: white">
-
+                        <table>
+                            <thead>
+                            <tr>
+                                <th scope="col">ID đơn</th>
+                                <th scope="col">Sân</th>
+                                <th scope="col">Thời gian</th>
+                                <th scope="col">Khách hàng</th>
+                                <th scope="col">Người quản lý</th>
+                                <th scope="col">Ghi chú</th>
+                                <th scope="col">Trạng thái</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($orders as $item)
+                                <tr>
+                                <td>{{ $item -> id }}</td>
+                                <td>{{ $item -> order_details -> fields -> name }}</td>
+                                <td>{{ $item -> date }}<br>
+                                    {{ $item -> times -> timeStart }} - {{ $item -> times -> timeEnd }}</td>
+                                <td>{{ $item -> customers -> name }}</td>
+                                <td>{{ $item -> admins -> name }}</td>
+                                <td>{{ $item -> order_note }}</td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
