@@ -169,18 +169,16 @@
                                     <div class="invalid-feedback">Ô này không được để trống</div>
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <input placeholder="Select date" class="form-control" type="date" id="Date"
-                                           placeholder="Ngày đặt sân" required>
+                                    <input placeholder="Select date" class="form-control" type="date" name="date" id="date" placeholder="Ngày đặt sân" required>
                                     <label for="Date" class="form-label">Ngày đặt sân</label>
                                     <div class="invalid-feedback">Ô này không được để trống</div>
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <select class="form-select" id="Time" required>
-                                        <option value="" selected>Chọn khung giờ</option>
+                                    <select class="form-select" name="times" id="times" required>
 
-                                    @foreach($times as $items)
-                                            <option value="{{ $items -> id }}">{{ $items -> timeStart }} - {{ $items -> timeEnd }}</option>
-                                        @endforeach
+{{--                                    @foreach($times as $items)--}}
+{{--                                            <option value="{{ $items -> id }}">{{ $items -> timeStart }} - {{ $items -> timeEnd }}</option>--}}
+{{--                                        @endforeach--}}
                                     </select>
                                     <label for="TimeEnd">Khung giờ</label>
                                     <div class="invalid-feedback">Ô này không được để trống</div>
@@ -200,25 +198,9 @@
                                     <div class="invalid-feedback">Ô này không được để trống</div>
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <select class="form-select Fields" name="fields" id="fields" onchange="" required>
+                                    <select class="form-select" name="fields" id="fields" onchange="" required>
                                     </select>
                                     <label for="fields">Sân</label>
-
-                                    {{--                                    @foreach($order as $items)--}}
-{{--                                        @if($items->field_id == $fields->id)--}}
-{{--                                            @if($order->date == date)--}}
-
-{{--                                            @endif--}}
-{{--                                            @foreach($times as $times)--}}
-
-{{--                                                @if($times->timeStart < $items->timeEnd || $times->timeEnd > $items->timeStart)--}}
-
-{{--                                                @else--}}
-{{--                                                    <option value="{{ $items -> id }}">{{ $items -> name }}</option>--}}
-{{--                                                @endif--}}
-{{--                                            @endforeach--}}
-{{--                                        @endif--}}
-{{--                                    @endforeach--}}
                                     <div class="invalid-feedback">Ô này không được để trống</div>
                                 </div>
                             </div>
@@ -255,7 +237,7 @@
 
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script src="../../resources/js/show.js"></script>
+<script src="../../resources/js/order.js"></script>
 <script src="../../resources/js/validate.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>

@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Field;
+use App\Models\FieldType;
 use App\Models\Order;
 use App\Http\Requests\StoreOrderRequest;
 use App\Http\Requests\UpdateOrderRequest;
 use App\Models\OrderDetail;
+use App\Models\Time;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Redirect;
 
@@ -21,6 +24,17 @@ class OrderController extends Controller
         $orders = OrderDetail::all();
         return view('dashboard.orders', [
             'orders'=> $orders
+        ]);
+    }
+
+    public function order() {
+        $times = Time::all();
+        $types = FieldType::all();
+        $fields = Field::all();
+        return view('customers.orders', [
+            'times' => $times,
+            'types' => $types,
+            'fields' => $fields
         ]);
     }
 
@@ -42,7 +56,7 @@ class OrderController extends Controller
      */
     public function store(StoreOrderRequest $request)
     {
-        //
+
     }
 
     /**
@@ -99,4 +113,16 @@ class OrderController extends Controller
     {
         //
     }
+
+    public function getFields(\Illuminate\Http\Request $request) {
+        $id  = $request -> id;
+        $fields = Field::where('type_id', $id)->get();
+        return response()->json($fields);
+    }
+    public function getTimes(\Illuminate\Http\Request $request) {
+        $times = Time::all();
+        return response()->json($times);
+    }
+
+
 }

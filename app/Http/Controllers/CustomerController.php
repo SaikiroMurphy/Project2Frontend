@@ -26,17 +26,6 @@ class CustomerController extends Controller
         return view('customers.index');
     }
 
-    public function order() {
-        $times = Time::all();
-        $types = FieldType::all();
-        $fields = Field::all();
-        return view('customers.orders', [
-            'times' => $times,
-            'types' => $types,
-            'fields' => $fields
-        ]);
-    }
-
     public function history() {
         return view('customers.history');
     }
@@ -134,7 +123,7 @@ class CustomerController extends Controller
         return view('customers.login');
     }
     public function loginProcess(\Illuminate\Http\Request $request) {
-        $account = $request->only('email', 'password');
+        $account = $request->except('_token');
         // Xác thực đăng nhập
         if(Auth::guard('customers')->attempt($account)){
 //        dd($check);
@@ -154,9 +143,12 @@ class CustomerController extends Controller
         }
     }
 
-    public function getFields(\Illuminate\Http\Request $request) {
-        $id  = $request -> id;
-        $fields = Field::where('type_id', $id)->get();
-        return response()->json($fields);
+    public function logout()
+    {
+        Auth::guard('customers')->logout();
+        session()->forget('customers');
+        return Redirect::route('customers.login');
     }
+
+
 }

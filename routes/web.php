@@ -22,6 +22,7 @@ Route::prefix('/customers')->group(function () {
     Route::post('/loginProcess', [\App\Http\Controllers\CustomerController::class, 'loginProcess'])->name('customers.loginProcess');
     Route::get('/register', [\App\Http\Controllers\CustomerController::class, 'create'])->name('customers.register');
     Route::post('/register', [\App\Http\Controllers\CustomerController::class, 'store'])->name('customers.store');
+    Route::get('/logout', [\App\Http\Controllers\CustomerController::class, 'logout'])->name('customers.logout');
 });
 
 Route::prefix('/dashboard')->group(function (){
@@ -31,8 +32,10 @@ Route::prefix('/dashboard')->group(function (){
 
 Route::middleware('checkLogin')->prefix('/customers')->group(function () {
    Route::get('/', [\App\Http\Controllers\CustomerController::class, 'index'])->name('customers.index');
-    Route::get('/orders', [\App\Http\Controllers\CustomerController::class, 'order'])->name('customers.orders');
-    Route::get('/orders/getFields/{id}', [\App\Http\Controllers\CustomerController::class, 'getFields']);
+    Route::get('/orders', [\App\Http\Controllers\OrderController::class, 'order'])->name('customers.orders');
+    Route::get('/orders/getFields/{id}', [\App\Http\Controllers\OrderController::class, 'getFields']);
+    Route::get('/orders/getTimes/', [\App\Http\Controllers\OrderController::class, 'getTimes']);
+
     Route::get('/history', [\App\Http\Controllers\CustomerController::class, 'history'])->name('customers.history');
     Route::delete('/customers/{id}', [\App\Http\Controllers\CustomerController::class, 'destroy'])->name('customers.destroy');
 });
